@@ -23,7 +23,6 @@ public class counterToMash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             addMashScore();
-            Debug.Log("The z is being prest");
         }
 
     }
