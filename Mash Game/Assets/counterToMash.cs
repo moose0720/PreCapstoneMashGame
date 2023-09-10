@@ -31,7 +31,7 @@ public class counterToMash : MonoBehaviour
     {
         mashScore++;
 
-        //mashText.text = mashScore.ToString();
+        
     }
 
 }
