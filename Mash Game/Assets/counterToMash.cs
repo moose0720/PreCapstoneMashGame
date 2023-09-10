@@ -19,6 +19,7 @@ public class counterToMash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         mashText.text = $"Mash: {mashScore.ToString()}";
         if (Input.GetKeyDown(KeyCode.Z))
         {
