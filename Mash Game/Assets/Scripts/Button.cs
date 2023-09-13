@@ -11,8 +11,8 @@ public class Button : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        xBorder = 21f; //the border on the x axis
-        xSpeed = 0.5f; // the speed of the block from left to right
+        xBorder = 10; //the border on the x axis
+        xSpeed = 0.02f; // the speed of the block from left to right
     }
 
     // Update is called once per frame

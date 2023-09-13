@@ -29,6 +29,11 @@ namespace Assets.Scripts
                 Debug.Log("The z is being prest");
             }
 
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                minusMashScore();
+            }
+
         }
 
         public void addMashScore()
@@ -36,6 +41,11 @@ namespace Assets.Scripts
             mashScore++;
 
             //mashText.text = mashScore.ToString();
+        }
+
+        public void minusMashScore()
+        {
+            mashScore--;
         }
 
     }
