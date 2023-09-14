@@ -16,7 +16,7 @@ public class pauseControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            time.timeScale = 0;
+            Time.timeScale = 0;
         }
     }
 }
