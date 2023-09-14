@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class RandomMash : MonoBehaviour
+public class randomMash : MonoBehaviour
 {
     public TMP_Text largeText;
     // Update is called once per frame
