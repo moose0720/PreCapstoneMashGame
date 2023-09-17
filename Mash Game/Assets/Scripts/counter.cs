@@ -26,7 +26,7 @@ namespace Assets.Scripts
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 addMashScore();
-                Debug.Log("The z is being prest");
+                
             }
 
             if (Input.GetKeyDown(KeyCode.X))
