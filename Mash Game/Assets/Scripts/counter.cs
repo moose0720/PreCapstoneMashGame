@@ -16,9 +16,7 @@ namespace Assets.Scripts
         public UnityEvent onScoreGame;
         public UnityEvent onScoreTake;
         private bool hasPrestAddKey;
-        private bool hasPrestMinesKey;
         KeyCode addKey = KeyCode.L;
-        KeyCode minKey = KeyCode.H;
         // Start is called before the first frame update
 
         void Start()
@@ -35,28 +33,29 @@ namespace Assets.Scripts
                 mash.pickRandomMashLetter();
                 addKey = mash.Win;
             }
-           /* if (!hasPrestMinesKey)
-            {
-                hasPrestMinesKey = true;
-                mash.pickRandomMashLetter();
-                minKey = mash.Win;
-            } */
+            
             mashText.text = $"Mash: {mashScore.ToString()}";
+
 
             if (Input.GetKeyDown(addKey))
             {
-
+            if(mash.Win == KeyCode.X)
+                {
+                    minusMashScore(); 
+                    onScoreTake?.Invoke();
+                    
+                }
+                else
+                {
                 addMashScore();
                 onScoreGame?.Invoke();
+
+                }
+
                 hasPrestAddKey = false;
             }
 
-            /*if (Input.GetKeyDown(minKey))
-            {
-                minusMashScore();
-                onScoreTake?.Invoke();
-                hasPrestMinesKey = false;
-            } */
+            
 
         }
 
