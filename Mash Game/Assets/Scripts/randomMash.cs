@@ -53,6 +53,8 @@ public class randomMash : MonoBehaviour
                 break; 
 
         }
+
+        
         // The currentLetter is will start as nothing befor it to be pick of a random letter
         currentLetter = "";
         

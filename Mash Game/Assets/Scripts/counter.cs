@@ -35,7 +35,7 @@ namespace Assets.Scripts
                 addKey = mash.Win;
             }
             
-            mashText.text = $"Mash: {mashScore.ToString()}";
+            mashText.text = $"Mash: {mashScore}";
 
 
             if (Input.GetKeyDown(addKey))
