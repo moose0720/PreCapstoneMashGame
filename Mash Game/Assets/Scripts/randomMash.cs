@@ -7,14 +7,16 @@ public class randomMash : MonoBehaviour
 {
     public TMP_Text largeText;
     public KeyCode Win;
-
+    // It will start a nothing but then it will pick a letter from Z, Q, J, X
     public string currentLetter = "";
     public string[] letter = new string[] { "Z", "Q", "J", "X" };
 
     public void randomLetter()
     {
+        // This is the picking the letter from the letter that on screen then to the next once the player mash the latter
         currentLetter = letter[Random.Range(0, letter.Length)];
         largeText.text = currentLetter;
+        //This is showing what letter is being called regarles if it on screen or not
         Debug.Log("RANDOM LETTER: " + currentLetter);
     }
 
@@ -51,7 +53,7 @@ public class randomMash : MonoBehaviour
                 break; 
 
         }
-
+        // The currentLetter is will start as nothing befor it to be pick of a random letter
         currentLetter = "";
         
     }
