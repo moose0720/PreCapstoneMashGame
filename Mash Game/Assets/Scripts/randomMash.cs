@@ -7,22 +7,34 @@ public class randomMash : MonoBehaviour
 {
     public TMP_Text largeText;
     public KeyCode Win;
+
+    public string currentLetter = "";
+    public string[] letter = new string[] { "Z", "Q", "J", "X" };
+
+    public void randomLetter()
+    {
+        currentLetter = letter[Random.Range(0, letter.Length)];
+        largeText.text = currentLetter;
+        Debug.Log("RANDOM LETTER: " + currentLetter);
+    }
+
     // Update is called once per frame
-    
+
     void Start()
     {
-        pickRandomMashLetter();
+        //pickRandomMashLetter();
     }
         
     
     // This will randomly pick the letter Z,Q,J. Update it to slow down for the player can see the letter.
     public void pickRandomMashLetter()
     {
-        string[] letter = new string[] { "Z", "Q", "J", "X"};
-        string randomletter = letter[Random.Range(0, letter.Length)];
-        largeText.text = randomletter;
+        //string[] letter = new string[] { "Z", "Q", "J", "X"};
+        //string randomletter = letter[Random.Range(0, letter.Length)];
+        randomLetter();
+        
        
-        switch (randomletter)
+        switch (currentLetter)
         {
             case "Z":
                 Win = KeyCode.Z;
@@ -39,6 +51,8 @@ public class randomMash : MonoBehaviour
                 break; 
 
         }
+
+        currentLetter = "";
         
     }
 

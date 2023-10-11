@@ -15,6 +15,8 @@ namespace Assets.Scripts
         public randomMash mash; 
         public UnityEvent onScoreGame;
         public UnityEvent onScoreTake;
+
+        [SerializeField]
         private bool hasPrestAddKey;
         KeyCode addKey = KeyCode.L;
         public GameObject myCheat;
