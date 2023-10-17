@@ -24,7 +24,7 @@ public class AnchoredMotor : MonoBehaviour
             transform.RotateAround(anchor.position, Vector3.forward, Speed * Time.deltaTime * -(int)Dir);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (didTap)
         {
             if (!isRunning)
             {
@@ -35,7 +35,13 @@ public class AnchoredMotor : MonoBehaviour
         }
     }
 
-
+    bool didTap
+    {
+        get
+        {
+            return Input.GetKeyUp(KeyCode.Space);
+        }
+    }
     void ChangeDir()
     {
         switch(Dir)
