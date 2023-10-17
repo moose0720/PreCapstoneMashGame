@@ -19,9 +19,10 @@ public class AnchoredMotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isRunning)
+        if (isRunning) // cheack if the game has started
         {
-            transform.RotateAround(anchor.position, Vector3.forward, Speed * Time.deltaTime * -(int)Dir);
+            transform.RotateAround(anchor.position, Vector3.forward, 
+                Speed * Time.deltaTime * -(int)Dir); // This is rotating the bar
         }
 
         if (didTap)
@@ -42,7 +43,7 @@ public class AnchoredMotor : MonoBehaviour
             return Input.GetKeyUp(KeyCode.Space);
         }
     }
-    void ChangeDir()
+    void ChangeDir() // This changes the direction for the bar once the space bar is Tap
     {
         switch(Dir)
         {

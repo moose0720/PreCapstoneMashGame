@@ -5,13 +5,14 @@ using UnityEngine;
 public class DotDetector : MonoBehaviour
 {
     GameObject currentDot;
-    bool isRunning = false';
-    // Start is called before the first frame update
+    bool isRunning = false;
+
+    // Check if the dot and the bar is colliding 
     void OnTriggerEnter2D(Collider2D other)
     {
         currentDot = other.gameObject;
     }
-
+    // Check if the bar has moved away for the dot that previously collided with
     void OnTriggerExit2D(Collider2D other)
     {
         currentDot = null;
