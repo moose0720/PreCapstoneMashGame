@@ -6,6 +6,7 @@ public class AnchoredMotor : MonoBehaviour
 {
     public int Speed = 5;
     public Direction Dir = Direction.Clockwise;
+    bool isRunning = false;
 
     Transform anchor;
 
@@ -18,7 +19,34 @@ public class AnchoredMotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(anchor.position, Vector3.forward, Speed * Time.deltaTime * -(int)Dir);
+        if (isRunning)
+        {
+            transform.RotateAround(anchor.position, Vector3.forward, Speed * Time.deltaTime * -(int)Dir);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (!isRunning)
+            {
+                isRunning = true;
+                return;
+            }
+           ChangeDir();
+        }
+    }
+
+
+    void ChangeDir()
+    {
+        switch(Dir)
+        {
+            case Direction.Clockwise:
+                Dir = Direction.AntiClockwise;
+                break;
+            case Direction.AntiClockwise:
+                Dir = Direction.Clockwise;
+                break;
+        }
     }
 }
 
