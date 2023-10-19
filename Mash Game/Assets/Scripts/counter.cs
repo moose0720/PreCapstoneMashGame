@@ -17,6 +17,7 @@ namespace Assets.Scripts
         public UnityEvent onScoreTake;
         private bool hasPrestAddKey;
         KeyCode addKey = KeyCode.L;
+        public GameObject myCheat;
         // Start is called before the first frame update
 
         void Start()
@@ -34,7 +35,7 @@ namespace Assets.Scripts
                 addKey = mash.Win;
             }
             
-            mashText.text = $"Mash: {mashScore.ToString()}";
+            mashText.text = $"Mash: {mashScore}";
 
 
             if (Input.GetKeyDown(addKey))
@@ -73,4 +74,6 @@ namespace Assets.Scripts
         }
 
     }
+
+    
 }
