@@ -4,48 +4,43 @@ using UnityEngine;
 
 public class AnchoredMotor : MonoBehaviour
 {
-    public int Speed = 5;
+    public GameData GameData;
     public Direction Dir = Direction.Clockwise;
-    bool isRunning = false;
+    public GameEvent OnPaddleReset;
+    Vector3 initialPos;
 
     Transform anchor;
 
-    // Start is called before the first frame update
     void Start()
     {
         anchor = GameObject.FindGameObjectWithTag("Anchor").transform;
+        initialPos = GetComponent<Transform>().localPosition;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isRunning) // cheack if the game has started
+        if (GameData.IsRunning)
         {
-            transform.RotateAround(anchor.position, Vector3.forward, 
-                Speed * Time.deltaTime * -(int)Dir); // This is rotating the bar
+            transform.RotateAround(anchor.position, Vector3.forward, GameData.CurrentMotorSpeed * Time.deltaTime * -(int)Dir);
         }
 
-        if (didTap)
+        if (_didTap && GameData.IsRunning)
         {
-            if (!isRunning)
-            {
-                isRunning = true;
-                return;
-            }
-           ChangeDir();
+            ChangeDirection();
         }
     }
 
-    bool didTap
+    bool _didTap
     {
         get
         {
-            return Input.GetKeyUp(KeyCode.Space);
+            return (Input.GetKeyUp(KeyCode.Space));
         }
     }
-    void ChangeDir() // This changes the direction for the bar once the space bar is Tap
+
+    void ChangeDirection()
     {
-        switch(Dir)
+        switch (Dir)
         {
             case Direction.Clockwise:
                 Dir = Direction.AntiClockwise;
@@ -55,10 +50,18 @@ public class AnchoredMotor : MonoBehaviour
                 break;
         }
     }
+
+    public void ResetPosition()
+    {
+        transform.localPosition = new Vector3(0, initialPos.y, 0);
+        transform.localRotation = Quaternion.identity;
+
+        OnPaddleReset.Raise();
+    }
 }
 
-    public enum Direction
-    {
-        Clockwise = 1, 
-        AntiClockwise = -1
-    }
+public enum Direction
+{
+    Clockwise = 1,
+    AntiClockwise = -1
+}

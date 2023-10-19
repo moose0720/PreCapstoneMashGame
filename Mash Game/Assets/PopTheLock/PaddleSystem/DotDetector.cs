@@ -5,37 +5,78 @@ using UnityEngine;
 public class DotDetector : MonoBehaviour
 {
     GameObject currentDot;
-    bool isRunning = false;
+    GameObject lastEnteredDot;
+    public GameData GameData;
+    public float LoseThreshold = .5f;
+    public GameEvent OnDotMissed;
+    public GameEvent OnDotScored;
+    public GameEvent OnWinEvent;
 
-    // Check if the dot and the bar is colliding 
     void OnTriggerEnter2D(Collider2D other)
     {
         currentDot = other.gameObject;
     }
-    // Check if the bar has moved away for the dot that previously collided with
+
     void OnTriggerExit2D(Collider2D other)
     {
+        lastEnteredDot = currentDot;
         currentDot = null;
+        Debug.Log("Last dot set");
     }
-    // Update is called once per frame
+
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (GameData.IsRunning)
         {
-            if(!isRunning)
+            //Find distance b/w last dot and current pos. And if it's higher than some threshold then raise DotMissed Event
+            if (lastEnteredDot && GetDistanceFromLastDot() > LoseThreshold)
             {
-                isRunning = true;
-                return;
+                OnDotMissed.Raise();
             }
-            if (currentDot != null)
+
+
+
+            if (didTap)
             {
-                Destroy(currentDot);
-                Debug.Log("Score += MashScore");
+                if (currentDot != null)
+                {
+                    
+                    Destroy(currentDot);
+                    GameData.DotsRemaining--;
+
+                    if (GameData.DotsRemaining <= 0)
+                    {
+                        GameData.DotsRemaining = 0;
+                        GameData.CurrentLevel++;
+                        OnWinEvent.Raise();
+                    }
+                    else
+                    {
+                        OnDotScored.Raise();
+                    }
+                }
+                else
+                {
+                    OnDotMissed.Raise();
+                }
             }
-            else
-            {
-                Debug.Log("Score -= MashScore && backto mashawayGame");
-            }
+        }
+
+
+    }
+
+    float GetDistanceFromLastDot()
+    {
+        Debug.Log((transform.position - lastEnteredDot.transform.position).magnitude);
+        return (transform.position - lastEnteredDot.transform.position).magnitude;
+    }
+
+
+    bool didTap
+    {
+        get
+        {
+            return (Input.GetKeyUp(KeyCode.Space));
         }
     }
 }
