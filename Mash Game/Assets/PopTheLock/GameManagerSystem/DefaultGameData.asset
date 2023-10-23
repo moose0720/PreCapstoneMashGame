@@ -9,6 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aea1f9fe47631f84f897bd54700f2e0f, type: 3}
-  m_Name: Default
+  m_Script: {fileID: 11500000, guid: 3126d5b3b1d325944ac1e44b8856ee1b, type: 3}
+  m_Name: DefaultGameData
   m_EditorClassIdentifier: 
+  CurrentLevel: 0
+  DotsRemaining: 0
+  Stars: 0
+  IsRunning: 0
+  MinSpawnAngle: 30
+  MaxSpawnAngle: 90
+  CurrentMotorSpeed: 60
+  MinMotorSpeed: 50
+  MaxMotorSpeed: 120

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameData GameData;
-    bool _isFirstTap = true;
+    bool isFirstTap = true;
 
     void Start()
     {
@@ -14,17 +14,30 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !GameData.IsRunning && _isFirstTap)
+        
+        
+        if (Input.GetKeyUp(KeyCode.Space) && !GameData.IsRunning && isFirstTap)
         {
             GameData.IsRunning = true;
-            _isFirstTap = false;
+            isFirstTap = false;
+        }
+
+    }
+
+    public void DecrementRemainingDots()
+    {
+        GameData.DotsRemaining--;
+
+        if (GameData.DotsRemaining < 0)
+        {
+            GameData.DotsRemaining = 0;
         }
     }
 
     public void LoadLevel()
     {
         GameData.ResetLevel();
-        _isFirstTap = true;
+        isFirstTap = true;
     }
 
 
