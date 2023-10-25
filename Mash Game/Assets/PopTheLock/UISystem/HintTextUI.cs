@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HintTextUI : MonoBehaviour
+/*public class HintTextUI : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,4 +15,4 @@ public class HintTextUI : MonoBehaviour
     {
         
     }
-}
+} */
