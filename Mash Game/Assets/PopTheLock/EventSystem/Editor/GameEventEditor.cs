@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-/*[CustomEditor(typeof(GameEvent))]
+[CustomEditor(typeof(GameEvent))]
 public class GameEventEditor : Editor
 {
     public override void OnInspectorGUI()
@@ -17,4 +17,4 @@ public class GameEventEditor : Editor
             e.Raise();
         }
     }
-} */
+} 
