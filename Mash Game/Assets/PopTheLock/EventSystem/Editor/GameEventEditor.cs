@@ -17,4 +17,4 @@ public class GameEventEditor : Editor
             e.Raise();
         }
     }
-} 
+}

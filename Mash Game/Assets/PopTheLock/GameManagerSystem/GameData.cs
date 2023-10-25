@@ -1,7 +1,7 @@
 using UnityEngine;
 
-/*[CreateAssetMenu]
+[CreateAssetMenu]
 public class GameData : ScriptableObject
 {
     
-} */
+}
