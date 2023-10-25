@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3126d5b3b1d325944ac1e44b8856ee1b, type: 3}
   m_Name: DefaultGameData
   m_EditorClassIdentifier: 
-  CurrentLevel: 0
-  DotsRemaining: 0
+  CurrentLevel: 1
+  DotsRemaining: 1
   Stars: 0
   IsRunning: 0
   MinSpawnAngle: 30
