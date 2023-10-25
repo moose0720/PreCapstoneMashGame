@@ -4,48 +4,39 @@ using UnityEngine;
 
 public class AnchoredMotor : MonoBehaviour
 {
-    //public GameData GameData;
-    public int Speed = 5;
+    public GameData GameData;
     public Direction Dir = Direction.Clockwise;
-    //public GameEvent OnPaddleReset;
-    //Vector3 initialPos;
+    public GameEvent OnPaddleReset;
+    Vector3 initialPos;
+
     Transform anchor;
-    bool isRunning = false;
 
     void Start()
     {
         anchor = GameObject.FindGameObjectWithTag("Anchor").transform;
-        //initialPos = GetComponent<Transform>().localPosition;
+        initialPos = GetComponent<Transform>().localPosition;
     }
 
     void Update()
     {
-        if (isRunning)
+        if (GameData.IsRunning)
         {
-            transform.RotateAround(anchor.position, Vector3.forward,
-                                                      Speed * Time.deltaTime
-                                                             * -(int) Dir);
+            transform.RotateAround(anchor.position, Vector3.forward, GameData.CurrentMotorSpeed * Time.deltaTime * -(int)Dir);
         }
 
-        if (didTap)
+        if (_didTap && GameData.IsRunning)
         {
-            if(!isRunning)
-            {
-                isRunning = true;
-                return;
-            }
-
             ChangeDirection();
         }
     }
 
-    bool didTap
+    bool _didTap
     {
         get
         {
             return (Input.GetKeyUp(KeyCode.Space));
+        }
     }
-        } 
 
     void ChangeDirection()
     {
@@ -60,13 +51,13 @@ public class AnchoredMotor : MonoBehaviour
         }
     }
 
-    /*public void ResetPosition()
+    public void ResetPosition()
     {
         transform.localPosition = new Vector3(0, initialPos.y, 0);
         transform.localRotation = Quaternion.identity;
 
         OnPaddleReset.Raise();
-    } */
+    }
 }
 
 public enum Direction

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-/*[CustomEditor(typeof(GameData))]
+[CustomEditor(typeof(GameData))]
 public class GameDataEditor : Editor
 {
     public override void OnInspectorGUI()
@@ -14,4 +14,4 @@ public class GameDataEditor : Editor
             e.ResetData();
         }
     }
-} */
+}

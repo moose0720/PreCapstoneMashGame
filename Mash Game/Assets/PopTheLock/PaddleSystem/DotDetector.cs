@@ -5,13 +5,12 @@ using UnityEngine;
 public class DotDetector : MonoBehaviour
 {
     GameObject currentDot;
-    bool isRunning = false;
-    //GameObject lastEnteredDot;
-    //public GameData GameData;
-    //public float LoseThreshold = .5f;
-    public GameEvent DotMissed;
-    public GameEvent DotScored;
-    //public GameEvent OnWinEvent;
+    GameObject lastEnteredDot;
+    public GameData GameData;
+    public float LoseThreshold = .5f;
+    public GameEvent OnDotMissed;
+    public GameEvent OnDotScored;
+    public GameEvent OnWinEvent;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,59 +19,57 @@ public class DotDetector : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        //lastEnteredDot = currentDot;
+        lastEnteredDot = currentDot;
         currentDot = null;
-        //Debug.Log("Last dot set");
+        Debug.Log("Last dot set");
     }
 
     void Update()
     {
-        //if (isRunning)
-        //{
+        if (GameData.IsRunning)
+        {
             //Find distance b/w last dot and current pos. And if it's higher than some threshold then raise DotMissed Event
-            /*if (lastEnteredDot && GetDistanceFromLastDot() > LoseThreshold)
+            if (lastEnteredDot && GetDistanceFromLastDot() > LoseThreshold)
             {
                 OnDotMissed.Raise();
-            }*/
+            }
 
 
 
             if (didTap)
             {
-                if(!isRunning)
-                {
-                    isRunning = true;
-                    return;
-                }
                 if (currentDot != null)
                 {
+                    
                     Destroy(currentDot);
-                    DotScored.Raise();
-                    //GameData.DotsRemaining--;
+                    GameData.DotsRemaining--;
 
-                   /* if (GameData.DotsRemaining <= 0)
+                    if (GameData.DotsRemaining <= 0)
                     {
                         GameData.DotsRemaining = 0;
                         GameData.CurrentLevel++;
                         OnWinEvent.Raise();
-                    }*/
+                    }
+                    else
+                    {
+                        OnDotScored.Raise();
+                    }
                 }
                 else
                 {
-                   DotMissed.Raise();
+                    OnDotMissed.Raise();
                 }
-                
-            }   
-        //}
+            }
+        }
 
 
     }
 
-    /*float GetDistanceFromLastDot()
+    float GetDistanceFromLastDot()
     {
         Debug.Log((transform.position - lastEnteredDot.transform.position).magnitude);
         return (transform.position - lastEnteredDot.transform.position).magnitude;
-    } */
+    }
 
 
     bool didTap
@@ -82,4 +79,4 @@ public class DotDetector : MonoBehaviour
             return (Input.GetKeyUp(KeyCode.Space));
         }
     }
-} 
+}

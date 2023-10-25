@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,12 +8,12 @@ public class GameEvent : ScriptableObject
 
     public void Raise()
     {
-       // Debug.Log(this.name + " Raised");
+        Debug.Log(this.name + " Raised");
         for (int i = 0; i < eventListeners.Count; i++)
         {
             eventListeners[i].OnEventRaised();
         }
-    } 
+    }
 
     public void Register(EventListener listener)
     {
@@ -32,3 +31,5 @@ public class GameEvent : ScriptableObject
         }
     }
 }
+
+

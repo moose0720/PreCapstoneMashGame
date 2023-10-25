@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public class DotSpawner : MonoBehaviour
+public class DotSpawner : MonoBehaviour
 {
     public AnchoredMotor Motor;
     public GameObject DotPrefab;
@@ -43,4 +43,4 @@ using UnityEngine;
             Destroy(dot);
         }
     }
-} */
+}

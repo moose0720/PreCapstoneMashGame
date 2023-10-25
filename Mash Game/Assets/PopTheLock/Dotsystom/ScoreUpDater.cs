@@ -7,7 +7,7 @@ public class ScoreUpDater : MonoBehaviour
 {
     public int remainingDots = 10;
 
-    TMPro.TextMeshPro Text;
+    public TMPro.TextMeshPro Text;
 
     public void decrementDots()
     {
