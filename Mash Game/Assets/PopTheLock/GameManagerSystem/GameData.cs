@@ -1,8 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu]
+/*[CreateAssetMenu]
 public class GameData : ScriptableObject
 {
+<<<<<<< HEAD
     public int CurrentLevel;
     public int DotsRemaining;
     public int Stars;
@@ -57,3 +58,7 @@ public class GameData : ScriptableObject
         IsRunning = false;
     }
 }
+=======
+    
+} */
+>>>>>>> parent of a8d433c (Revert "Saving point")

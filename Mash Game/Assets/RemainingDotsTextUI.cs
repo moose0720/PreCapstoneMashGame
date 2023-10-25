@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class RemainingDotsTextUI : MonoBehaviour
+/*public class RemainingDotsTextUI : MonoBehaviour
 {
     public GameData GameData;
-    TMPro.TextMeshPr text;
+    TMPro.TextMeshPro text;
 
     void Start()
     {
@@ -15,4 +15,4 @@ public class RemainingDotsTextUI : MonoBehaviour
     {
         text.text = GameData.DotsRemaining.ToString();
     }
-}
+}*/

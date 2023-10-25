@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+/*public class GameManager : MonoBehaviour
 {
     public GameData GameData;
     bool isFirstTap = true;
@@ -41,4 +41,4 @@ public class GameManager : MonoBehaviour
     }
 
 
-}
+} */
