@@ -221,7 +221,6 @@ GameObject:
   - component: {fileID: 627034766}
   - component: {fileID: 627034765}
   - component: {fileID: 627034767}
-  - component: {fileID: 627034768}
   m_Layer: 0
   m_Name: MovingBar
   m_TagString: Untagged
@@ -308,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acf277854ac2854da6460126e5d5962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 20
   Dir: -1
 --- !u!50 &627034765
 Rigidbody2D:
@@ -369,24 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2786911cc950dbe4daa4058723e144ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DotMissed: {fileID: 0}
-  DotScored: {fileID: 0}
---- !u!114 &627034768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627034761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c01e828ea870e641a46aa8b12316c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: afa112b51014db047a7396958675bfa3, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
+  DotMissed: {fileID: 11400000, guid: afa112b51014db047a7396958675bfa3, type: 2}
+  DotScored: {fileID: 11400000, guid: 531338c8bb8c4e64b924a75f4cacc09b, type: 2}
 --- !u!1 &918686764
 GameObject:
   m_ObjectHideFlags: 0
