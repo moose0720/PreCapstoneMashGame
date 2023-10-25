@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /*public class RemainingDotsTextUI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameData GameData;
+    TMPro.TextMeshPro text;
+
     void Start()
     {
-        
+        text = GetComponent<TMPro.TextMeshPro>();
+        text.text = GameData.DotsRemaining.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        text.text = GameData.DotsRemaining.ToString();
     }
-} */
+}*/

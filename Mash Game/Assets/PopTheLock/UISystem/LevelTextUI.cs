@@ -3,20 +3,16 @@ using UnityEngine;
 /*public class LevelTextUI : MonoBehaviour
 {
     public GameData GameData;
-    TMPro.TextMeshProUGUI _text;
+    TMPro.TextMeshPro Text;
 
-<<<<<<< HEAD
     void Start()
     {
-        _text = GetComponent<TMPro.TextMeshProUGUI>();
-        _text.text = "Level: " + GameData.CurrentLevel.ToString();
+        _text = GetComponent<TMPro.TextMeshPro>();
+        Text.text = "Level: " + GameData.CurrentLevel.ToString();
     }
 
     void Update()
     {
-        _text.text = "Level: " + GameData.CurrentLevel.ToString();
+        Text.text = "Level: " + GameData.CurrentLevel.ToString();
     }
-}
-=======
 }*/
->>>>>>> parent of a8d433c (Revert "Saving point")
