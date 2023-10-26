@@ -5,9 +5,9 @@ using UnityEngine;
 public class DotDetector : MonoBehaviour
 {
     GameObject currentDot;
-    bool isRunning = false;
+    public GameData GameData;
+    
     //GameObject lastEnteredDot;
-    //public GameData GameData;
     //public float LoseThreshold = .5f;
     public GameEvent DotMissed;
     public GameEvent DotScored;
@@ -39,9 +39,9 @@ public class DotDetector : MonoBehaviour
 
             if (didTap)
             {
-                if(!isRunning)
+                if(!GameDataisRunning)
                 {
-                    isRunning = true;
+                    GameData.isRunning = true;
                     return;
                 }
                 if (currentDot != null)
