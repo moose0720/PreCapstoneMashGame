@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420035}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420036}
   - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
@@ -487,6 +488,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.050124552, g: 0.8301887, b: 0.81669647, a: 1}
   loseColor: {r: 0.94509804, g: 0.31764707, b: 0, a: 0}
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c01e828ea870e641a46aa8b12316c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 97b1374bd149a8245b01308b1360ec86, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 519420035}
+        m_TargetAssemblyTypeName: ColorManager, Assembly-CSharp
+        m_MethodName: changeToStartColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &627034761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1053,7 @@ GameObject:
   - component: {fileID: 1231691444}
   - component: {fileID: 1231691445}
   - component: {fileID: 1231691446}
+  - component: {fileID: 1231691447}
   m_Layer: 0
   m_Name: manager
   m_TagString: Untagged
@@ -1100,7 +1130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c01e828ea870e641a46aa8b12316c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: dc6d04acd0c09d84585026babe6c2b9b, type: 2}
+  Event: {fileID: 11400000, guid: 9842c7e210f1c824fa09d556b7ef9e7c, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -1135,6 +1165,34 @@ MonoBehaviour:
       - m_Target: {fileID: 1231691442}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: stopGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1231691447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231691441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c01e828ea870e641a46aa8b12316c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 97b1374bd149a8245b01308b1360ec86, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1231691442}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: loadSameLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
