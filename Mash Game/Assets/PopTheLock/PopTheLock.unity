@@ -1258,7 +1258,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342841233}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.008012118, y: 0.007852244, z: 0.000111591784, w: -0.9999371}
   m_LocalPosition: {x: 55.375835, y: 141.57303, z: -4.675799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1270,7 +1270,7 @@ Transform:
   - {fileID: 407370039}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.918, y: 359.1, z: -0.02}
 --- !u!95 &1342841235
 Animator:
   serializedVersion: 4
@@ -1279,7 +1279,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342841233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 508b5ac02663e1349bf42a61cc3817f1, type: 2}
   m_CullingMode: 0
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa4fffdf269cbe44bfe517b25b0db93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadLevel: {fileID: 11400000, guid: dc6d04acd0c09d84585026babe6c2b9b, type: 2}
+  events: []
 --- !u!1 &1516462122
 GameObject:
   m_ObjectHideFlags: 0
