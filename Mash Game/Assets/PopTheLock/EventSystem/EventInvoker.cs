@@ -9,7 +9,7 @@ public class EventInvoker : MonoBehaviour
 
     public void Raise(int index)
     {
-        events[indexer].Raise();
+        events[index].Raise();
     }
 
 } 
