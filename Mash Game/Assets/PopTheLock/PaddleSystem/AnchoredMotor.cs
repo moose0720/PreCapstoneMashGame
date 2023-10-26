@@ -62,7 +62,7 @@ public class AnchoredMotor : MonoBehaviour
         
         transform.localPosition = new Vector3(0, initialPos.y, 0);
         transform.localRotation = Quaternion.identity;
-        isRunning = false;
+        //GameData.isRunning = false;
         //OnPaddleReset.Raise();
     } 
     public void Stop()
