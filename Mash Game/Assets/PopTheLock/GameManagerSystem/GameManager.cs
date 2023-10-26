@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameData GameData;
     public GameEvent levelCleared;
-    //bool isFirstTap = true;
+    bool isFirstTap = true;
 
     void Start()
     {
@@ -16,15 +16,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-        if ((Input.GetKeyUp(KeyCode.Space)) && !GameData.isRunning)
-        {
-            GameData.isRunning = true;
-        }
-        /*if (Input.GetKeyUp(KeyCode.Space) && !GameData.IsRunning && isFirstTap)
+        if (Input.GetKeyUp(KeyCode.Space) && !GameData.IsRunning && isFirstTap)
         {
             GameData.IsRunning = true;
             isFirstTap = false;
-        }*/
+        }
 
     }
 
