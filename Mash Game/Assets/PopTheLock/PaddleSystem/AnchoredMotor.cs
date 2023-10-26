@@ -10,7 +10,7 @@ public class AnchoredMotor : MonoBehaviour
     //public GameEvent OnPaddleReset;
     Vector3 initialPos;
     Transform anchor;
-    bool isRunning = false;
+    
 
     void Start()
     {
@@ -27,15 +27,12 @@ public class AnchoredMotor : MonoBehaviour
                                                              * -(int) Dir);
         }
 
-        if (didTap)
+        if (didTap && GameData.isRunning)
         {
             if(!GameData.isRunning)
             {
-                GameData.isRunning = true;
-                return;
+                ChangeDirection();
             }
-
-            ChangeDirection();
         }
     }
 

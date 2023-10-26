@@ -37,13 +37,9 @@ public class DotDetector : MonoBehaviour
 
 
 
-            if (didTap)
+            if (didTap && GameData.isRunning)
             {
-                if(!GameData.isRunning)
-                {
-                    GameData.isRunning = true;
-                    return;
-                }
+              
                 if (currentDot != null)
                 {
                     Destroy(currentDot);
