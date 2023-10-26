@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acf277854ac2854da6460126e5d5962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameData: {fileID: 0}
   Speed: 20
   Dir: -1
 --- !u!50 &627034765
@@ -651,6 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2786911cc950dbe4daa4058723e144ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameData: {fileID: 11400000, guid: fc4bdca7a74d70145b4e72f637b9b7ec, type: 2}
   DotMissed: {fileID: 11400000, guid: afa112b51014db047a7396958675bfa3, type: 2}
   DotScored: {fileID: 11400000, guid: 531338c8bb8c4e64b924a75f4cacc09b, type: 2}
 --- !u!114 &627034768
