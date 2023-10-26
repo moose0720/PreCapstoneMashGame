@@ -15,3 +15,4 @@ MonoBehaviour:
   CurrentLevel: 1
   maxUnlockedLevel: 1
   DotsRemaining: 0
+  isRunning: 0
