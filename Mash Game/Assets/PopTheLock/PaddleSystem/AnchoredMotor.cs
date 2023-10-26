@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnchoredMotor : MonoBehaviour
 {
-    //public GameData GameData;
+    public GameData GameData;
     public int Speed = 5;
     public Direction Dir = Direction.Clockwise;
     //public GameEvent OnPaddleReset;
@@ -20,7 +20,7 @@ public class AnchoredMotor : MonoBehaviour
 
     void Update()
     {
-        if (isRunning)
+        if (GameData.isRunning)
         {
             transform.RotateAround(anchor.position, Vector3.forward,
                                                       Speed * Time.deltaTime
@@ -29,9 +29,9 @@ public class AnchoredMotor : MonoBehaviour
 
         if (didTap)
         {
-            if(!isRunning)
+            if(!GameDataisRunning)
             {
-                isRunning = true;
+                GameDataisRunning = true;
                 return;
             }
 
@@ -70,7 +70,7 @@ public class AnchoredMotor : MonoBehaviour
     } 
     public void Stop()
     {
-
+        GameData.isRuning = false;
     }
 }
 
