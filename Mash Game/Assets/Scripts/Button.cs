@@ -12,7 +12,7 @@ public class Button : MonoBehaviour
     void Start()
     {
         xBorder = 400f; //the border on the x axis
-        xSpeed = 0.5f; // the speed of the block from left to right
+        xSpeed = 1f; // the speed of the block from left to right
     }
 
     // Update is called once per frame
