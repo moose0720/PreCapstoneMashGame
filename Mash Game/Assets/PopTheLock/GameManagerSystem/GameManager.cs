@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        GameData.ResetLevel();
+        GameData.resetLevel();
     }
 
     void Update()
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     }
     public void loadSameLevel()
     {
-        GameData.resetLevel;
+        GameData.resetLevel();
         isFirstTap = true;
     }
 

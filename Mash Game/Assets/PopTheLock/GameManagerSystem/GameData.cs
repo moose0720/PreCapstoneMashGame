@@ -16,7 +16,7 @@ public class GameData : ScriptableObject
     //public int MinMotorSpeed = 50;
     //public int MaxMotorSpeed = 120;
 
-    public void ResetLevel()
+    public void resetLevel()
     {
         isRunning = false;
         DotsRemaining = CurrentLevel;
