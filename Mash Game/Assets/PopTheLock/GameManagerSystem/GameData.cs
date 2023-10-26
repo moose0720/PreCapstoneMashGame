@@ -7,8 +7,8 @@ public class GameData : ScriptableObject
     public int CurrentLevel;
     public int maxUnlockedLevel;
     public int DotsRemaining;
+    public bool isRunning = false;
     //public int Stars;
-    //public bool IsRunning = false;
     //public int MinSpawnAngle = 30;
     //public int MaxSpawnAngle = 90;
 
@@ -18,7 +18,7 @@ public class GameData : ScriptableObject
 
     public void ResetLevel()
     {
-        //IsRunning = false;
+        isRunning = false;
         DotsRemaining = CurrentLevel;
     }
 
