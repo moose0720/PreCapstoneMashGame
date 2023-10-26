@@ -8,14 +8,14 @@ public class AnchoredMotor : MonoBehaviour
     public int Speed = 5;
     public Direction Dir = Direction.Clockwise;
     //public GameEvent OnPaddleReset;
-    //Vector3 initialPos;
+    Vector3 initialPos;
     Transform anchor;
     bool isRunning = false;
 
     void Start()
     {
         anchor = GameObject.FindGameObjectWithTag("Anchor").transform;
-        //initialPos = GetComponent<Transform>().localPosition;
+        initialPos = GetComponent<Transform>().localPosition;
     }
 
     void Update()
@@ -60,13 +60,18 @@ public class AnchoredMotor : MonoBehaviour
         }
     }
 
-    /*public void ResetPosition()
+    public void ResetPosition()
     {
+        
         transform.localPosition = new Vector3(0, initialPos.y, 0);
         transform.localRotation = Quaternion.identity;
+        isRunning = false;
+        //OnPaddleReset.Raise();
+    } 
+    public void Stop()
+    {
 
-        OnPaddleReset.Raise();
-    } */
+    }
 }
 
 public enum Direction

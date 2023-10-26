@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public class EventInvoker : MonoBehaviour
+public class EventInvoker : MonoBehaviour
 {
 
-    public GameEvent Event;
+    public GameEvent loadLevel;
 
-    public void Raise()
+    public void raiseLoadGame()
     {
-        Event.Raise();
+        loadLevel.Raise();
 
 
     }
-} */
+} 

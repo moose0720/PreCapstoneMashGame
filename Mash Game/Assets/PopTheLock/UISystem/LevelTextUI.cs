@@ -1,18 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+//using TMPro;
 
-/*public class LevelTextUI : MonoBehaviour
+public class LevelTextUI : MonoBehaviour
 {
     public GameData GameData;
-    TMPro.TextMeshPro Text;
+    TMPro.TextMeshProUGUI Text;
 
     void Start()
     {
-        _text = GetComponent<TMPro.TextMeshPro>();
-        Text.text = "Level: " + GameData.CurrentLevel.ToString();
+        Text = GetComponent<TMPro.TextMeshProUGUI>();
+        Text.text = "Round: " + GameData.CurrentLevel.ToString();
     }
 
     void Update()
     {
-        Text.text = "Level: " + GameData.CurrentLevel.ToString();
+        Text.text = "Round: " + GameData.CurrentLevel.ToString();
     }
-}*/
+}

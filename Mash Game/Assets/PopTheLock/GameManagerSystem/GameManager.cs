@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public GameData GameData;
-    bool isFirstTap = true;
+    public GameEvent levelCleared;
+    //bool isFirstTap = true;
 
     void Start()
     {
@@ -16,29 +17,31 @@ using UnityEngine;
     {
         
         
-        if (Input.GetKeyUp(KeyCode.Space) && !GameData.IsRunning && isFirstTap)
+        /*if (Input.GetKeyUp(KeyCode.Space) && !GameData.IsRunning && isFirstTap)
         {
             GameData.IsRunning = true;
             isFirstTap = false;
-        }
+        }*/
 
     }
 
-    public void DecrementRemainingDots()
+    public void decrementRemainingDots()
     {
         GameData.DotsRemaining--;
 
-        if (GameData.DotsRemaining < 0)
+        if (GameData.DotsRemaining <= 0)
         {
             GameData.DotsRemaining = 0;
+            levelCleared.Raise();
         }
     }
 
-    public void LoadLevel()
+    public void loadNextLevel()
     {
+        GameData.CurrentLevel++;
         GameData.ResetLevel();
-        isFirstTap = true;
+        //isFirstTap = true;
     }
 
 
-} */
+} 

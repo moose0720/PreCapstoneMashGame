@@ -1,18 +1,18 @@
 using UnityEngine;
 
-/*public class RemainingDotsTextUI : MonoBehaviour
+public class RemainingDotsTextUI : MonoBehaviour
 {
     public GameData GameData;
-    TMPro.TextMeshPro text;
+    TMPro.TextMeshPro Text;
 
     void Start()
     {
-        text = GetComponent<TMPro.TextMeshPro>();
-        text.text = GameData.DotsRemaining.ToString();
+        Text = GetComponent<TMPro.TextMeshPro>();
+        Text.text = GameData.DotsRemaining.ToString();
     }
 
     void Update()
     {
-        text.text = GameData.DotsRemaining.ToString();
+        Text.text = GameData.DotsRemaining.ToString();
     }
-}*/
+} 
