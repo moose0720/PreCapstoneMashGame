@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-        
+        if ((Input.GetKeyUp(KeyCode.Space)) && !GameData.isRunning)
+        {
+            GameData.isRunning = true;
+        }
         /*if (Input.GetKeyUp(KeyCode.Space) && !GameData.IsRunning && isFirstTap)
         {
             GameData.IsRunning = true;
