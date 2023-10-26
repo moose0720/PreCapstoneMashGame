@@ -46,5 +46,8 @@ public class GameManager : MonoBehaviour
         //isFirstTap = true;
     }
 
-
+    public void stopGame()
+    {
+        GameData.isRunning = false;
+    }
 } 

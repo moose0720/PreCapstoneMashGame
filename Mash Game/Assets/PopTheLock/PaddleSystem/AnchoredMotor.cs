@@ -65,10 +65,7 @@ public class AnchoredMotor : MonoBehaviour
         //GameData.isRunning = false;
         //OnPaddleReset.Raise();
     } 
-    public void Stop()
-    {
-        GameData.isRunning = false;
-    }
+
 }
 
 public enum Direction
