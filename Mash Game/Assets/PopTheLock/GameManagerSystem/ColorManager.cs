@@ -11,7 +11,7 @@ public class ColorManager : MonoBehaviour
     void Start()
     {
         cam = GetComponent<Camera>();
-        cam.backgroundColor = startColor;
+        cam.backgroundColor = startColor
     }
 
     
