@@ -39,7 +39,7 @@ public class DotDetector : MonoBehaviour
 
             if (didTap)
             {
-                if(!GameDataisRunning)
+                if(!GameData.isRunning)
                 {
                     GameData.isRunning = true;
                     return;

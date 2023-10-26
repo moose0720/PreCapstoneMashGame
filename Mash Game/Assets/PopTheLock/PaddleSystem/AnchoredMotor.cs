@@ -29,9 +29,9 @@ public class AnchoredMotor : MonoBehaviour
 
         if (didTap)
         {
-            if(!GameDataisRunning)
+            if(!GameData.isRunning)
             {
-                GameDataisRunning = true;
+                GameData.isRunning = true;
                 return;
             }
 
@@ -70,7 +70,7 @@ public class AnchoredMotor : MonoBehaviour
     } 
     public void Stop()
     {
-        GameData.isRuning = false;
+        GameData.isRunning = false;
     }
 }
 
