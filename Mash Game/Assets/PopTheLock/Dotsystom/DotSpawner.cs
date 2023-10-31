@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public class DotSpawner : MonoBehaviour
+public class DotSpawner : MonoBehaviour
 {
     public AnchoredMotor Motor;
     public GameObject DotPrefab;
-    public GameObject StarredDotPrefab;
     public GameData GameData;
 
     void Start()
@@ -16,14 +15,14 @@ using UnityEngine;
 
     public void Spawn()
     {
-        RemoveDuplicates();
+        //RemoveDuplicates();
 
-        var angle = Random.Range(GameData.MinSpawnAngle, GameData.MaxSpawnAngle);
-        var go = Instantiate(SelectRandomDot(), Motor.transform.position, Quaternion.identity, transform);
-        go.transform.RotateAround(transform.position, Vector3.forward, -angle * (int)Motor.Dir);
+        //var angle = Random.Range(GameData.MinSpawnAngle, GameData.MaxSpawnAngle);
+        //var go = Instantiate(SelectRandomDot(), Motor.transform.position, Quaternion.identity, transform);
+        //go.transform.RotateAround(transform.position, Vector3.forward, -angle * (int)Motor.Dir);
     }
 
-    GameObject SelectRandomDot()
+    /*GameObject SelectRandomDot()
     {
         if (Random.value < 0.2)
         {
@@ -42,5 +41,5 @@ using UnityEngine;
         {
             Destroy(dot);
         }
-    }
-} */
+    }*/
+} 

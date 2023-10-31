@@ -34,18 +34,16 @@ public class GameManager : MonoBehaviour
             levelCleared.Raise();
         }
     }
-
-    public void loadNextLevel()
+    public void loadLevel(bool next)
     {
-        GameData.CurrentLevel++;
+        if (next)
+        {
+            GameData.CurrentLevel++;
+        }
         GameData.resetLevel();
         isFirstTap = true;
     }
-    public void loadSameLevel()
-    {
-        GameData.resetLevel();
-        isFirstTap = true;
-    }
+ 
 
     public void stopGame()
     {

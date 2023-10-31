@@ -5,7 +5,7 @@ public class GameData : ScriptableObject
 {
 
     public int CurrentLevel;
-    public int maxUnlockedLevel;
+    //public int maxUnlockedLevel;
     public int DotsRemaining;
     public bool isRunning = false;
     //public int Stars;
@@ -22,12 +22,12 @@ public class GameData : ScriptableObject
         DotsRemaining = CurrentLevel;
     }
 
-    /*public void ResetData()
+    public void ResetData()
     {
         CurrentLevel = 1;
         DotsRemaining = CurrentLevel;
-        CurrentMotorSpeed = MinMotorSpeed;
-    }*/
+        //CurrentMotorSpeed = MinMotorSpeed;
+    }
 
    /* public void IncreaseMotorSpeed(int value)
     {
