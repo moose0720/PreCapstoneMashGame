@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         GameData.CurrentLevel++;
         GameData.resetLevel();
-        //isFirstTap = true;
+        isFirstTap = true;
     }
     public void loadSameLevel()
     {
