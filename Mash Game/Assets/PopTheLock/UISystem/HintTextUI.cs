@@ -6,9 +6,16 @@ public class HintTextUI : MonoBehaviour
 {
     public GameData GameData;
     // Start is called before the first frame update
-    void Updata()
+    void start()
     {
        if(GameData.CurrentLevel != 1)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+    void Update()
+    {
+        if (GameData.CurrentLevel != 1)
         {
             gameObject.SetActive(false);
         }

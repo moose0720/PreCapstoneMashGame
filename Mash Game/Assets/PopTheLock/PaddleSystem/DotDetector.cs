@@ -11,7 +11,7 @@ public class DotDetector : MonoBehaviour
     //public float LoseThreshold = .5f;
     public GameEvent DotMissed;
     public GameEvent DotScored;
-    //public GameEvent OnWinEvent;
+    public GameEvent levelCleared;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -43,16 +43,25 @@ public class DotDetector : MonoBehaviour
                 if (currentDot != null)
                 {
                     Destroy(currentDot);
-                    DotScored.Raise();
-                    //GameData.DotsRemaining--;
+                    GameData.DotsRemaining--;
 
-                   /* if (GameData.DotsRemaining <= 0)
-                    {
-                        GameData.DotsRemaining = 0;
-                        GameData.CurrentLevel++;
-                        OnWinEvent.Raise();
-                    }*/
+                /* if (GameData.DotsRemaining <= 0)
+                 {
+                     GameData.DotsRemaining = 0;
+                     GameData.CurrentLevel++;
+                     OnWinEvent.Raise();
+                 }*/
+                if (GameData.DotsRemaining <= 0)
+                {
+                    GameData.DotsRemaining = 0;
+                    GameData.CurrentLevel++;
+                    levelCleared.Raise();
                 }
+                else 
+                {
+                    DotScored.Raise();
+                }
+            }
                 else
                 {
                    DotMissed.Raise();

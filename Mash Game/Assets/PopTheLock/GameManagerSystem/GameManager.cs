@@ -21,25 +21,11 @@ public class GameManager : MonoBehaviour
             GameData.isRunning = true;
             isFirstTap = false;
         }
-
     }
 
-    public void decrementRemainingDots()
+    public void loadLevel()
     {
-        GameData.DotsRemaining--;
 
-        if (GameData.DotsRemaining <= 0)
-        {
-            GameData.DotsRemaining = 0;
-            levelCleared.Raise();
-        }
-    }
-    public void loadLevel(bool next)
-    {
-        if (next)
-        {
-            GameData.CurrentLevel++;
-        }
         GameData.resetLevel();
         isFirstTap = true;
     }

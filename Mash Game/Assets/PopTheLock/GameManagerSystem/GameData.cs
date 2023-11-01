@@ -54,8 +54,8 @@ public class GameData : ScriptableObject
         }
     }*/
 
-    /*public void StopGame()
+    public void StopGame()
     {
-        IsRunning = false;
-    }*/
+        isRunning = false;
+    }
 }
