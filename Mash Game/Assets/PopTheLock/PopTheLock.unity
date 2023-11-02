@@ -1114,9 +1114,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1342841234}
-  - component: {fileID: 1342841238}
   - component: {fileID: 1342841236}
-  - component: {fileID: 1342841235}
+  - component: {fileID: 1342841237}
   m_Layer: 0
   m_Name: Lock
   m_TagString: Untagged
@@ -1144,26 +1143,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0.918, y: 359.1, z: -0.02}
---- !u!95 &1342841235
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342841233}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 508b5ac02663e1349bf42a61cc3817f1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1342841236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,26 +1157,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Events:
   - {fileID: 11400000, guid: afa112b51014db047a7396958675bfa3, type: 2}
-  - {fileID: 11400000, guid: 9c204321c625b4249877423dfb04bb78, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1342841235}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: doAnimation
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1342841235}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
+      - m_Target: {fileID: 519420035}
+        m_TargetAssemblyTypeName: ColorManager, Assembly-CSharp
+        m_MethodName: changeToLoseColor
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1206,7 +1172,7 @@ MonoBehaviour:
           m_StringArgument: doLevelClearedAnimation
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1342841238
+--- !u!114 &1342841237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1215,10 +1181,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342841233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa4fffdf269cbe44bfe517b25b0db93, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c01e828ea870e641a46aa8b12316c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: dc6d04acd0c09d84585026babe6c2b9b, type: 2}
+  Events:
+  - {fileID: 11400000, guid: 9c204321c625b4249877423dfb04bb78, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 519420035}
+        m_TargetAssemblyTypeName: ColorManager, Assembly-CSharp
+        m_MethodName: changeToStartColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1516462122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03265606, y: 0.86388904}
   m_AnchorMax: {x: 0.409448, y: 0.963889}
-  m_AnchoredPosition: {x: -0.38865662, y: 0.81448364}
+  m_AnchoredPosition: {x: -0.38867188, y: 0.81448364}
   m_SizeDelta: {x: -2.7774048, y: 0.3710022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907060490
