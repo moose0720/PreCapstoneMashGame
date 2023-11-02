@@ -7,31 +7,24 @@ public class DotSpawner : MonoBehaviour
     public AnchoredMotor Motor;
     public GameObject DotPrefab;
     public GameData GameData;
-    private GameObject activeDot;
+
 
     void Start()
     {
         Spawn();
-        activeDot = GameObject.FindWithTag("Dot");
     }
 
     public void Spawn()
     {
-        if(activeDot && GameData.CurrentLevel > 1)
-        {
-            Destroy(activeDot.gameObject);
-        }
-
-        if (GameData.DotsRemaining > 1)
-        {
-            var angle = Random.Range(20, 120);
-            activeDot = Instantiate(DotPrefab, Motor.transform.position,
+        
+            var angle = Random.Range(39, 10);
+            var go = Instantiate(DotPrefab, Motor.transform.position,
                                                                     Quaternion.identity,
                                                                                 transform);
 
-            activeDot.transform.RotateAround(transform.position, Vector3.forward,
+            go.transform.RotateAround(transform.position, Vector3.forward,
                                                                     -angle * (int)Motor.Dir);
-        }
+        
         //RemoveDuplicates();
 
         //var angle = Random.Range(GameData.MinSpawnAngle, GameData.MaxSpawnAngle);
@@ -49,7 +42,7 @@ public class DotSpawner : MonoBehaviour
         {
             return DotPrefab;
         }
-    }
+    }*/
 
     void RemoveDuplicates()
     {
@@ -58,5 +51,5 @@ public class DotSpawner : MonoBehaviour
         {
             Destroy(dot);
         }
-    }*/
+    }
 } 

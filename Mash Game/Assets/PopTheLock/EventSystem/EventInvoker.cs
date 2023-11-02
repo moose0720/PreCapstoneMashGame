@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EventInvoker : MonoBehaviour
 {
-    public GameEvent[] events;
+    public GameEvent Event;
     
 
-    public void Raise(int index)
+    public void Raise()
     {
-        events[index].Raise();
+        Event.Raise();
     }
 
 } 

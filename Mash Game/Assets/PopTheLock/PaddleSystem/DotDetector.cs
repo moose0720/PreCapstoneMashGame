@@ -6,9 +6,8 @@ public class DotDetector : MonoBehaviour
 {
     GameObject currentDot;
     public GameData GameData;
-    
-    //GameObject lastEnteredDot;
-    //public float LoseThreshold = .5f;
+    GameObject lastEnteredDot;
+    public float LoseThreshold = .5f;
     public GameEvent DotMissed;
     public GameEvent DotScored;
     public GameEvent levelCleared;
@@ -20,24 +19,24 @@ public class DotDetector : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        //lastEnteredDot = currentDot;
+        lastEnteredDot = currentDot;
         currentDot = null;
         //Debug.Log("Last dot set");
     }
 
     void Update()
     {
-        //if (isRunning)
-        //{
+        if (GameData.isRunning)
+        {
             //Find distance b/w last dot and current pos. And if it's higher than some threshold then raise DotMissed Event
-            /*if (lastEnteredDot && GetDistanceFromLastDot() > LoseThreshold)
+            if (lastEnteredDot && GetDistanceFromLastDot() > LoseThreshold)
             {
-                OnDotMissed.Raise();
-            }*/
+                DotMissed.Raise();
+            }
 
 
 
-            if (didTap && GameData.isRunning)
+            if (didTap)
             {
               
                 if (currentDot != null)
@@ -49,7 +48,7 @@ public class DotDetector : MonoBehaviour
                  {
                      GameData.DotsRemaining = 0;
                      GameData.CurrentLevel++;
-                     OnWinEvent.Raise();
+                     levelCleared.Raise();
                  }*/
                 if (GameData.DotsRemaining <= 0)
                 {
@@ -68,16 +67,16 @@ public class DotDetector : MonoBehaviour
                 }
                 
             }   
-        //}
+        }
 
 
     }
 
-    /*float GetDistanceFromLastDot()
+    float GetDistanceFromLastDot()
     {
-        Debug.Log((transform.position - lastEnteredDot.transform.position).magnitude);
+        //Debug.Log((transform.position - lastEnteredDot.transform.position).magnitude);
         return (transform.position - lastEnteredDot.transform.position).magnitude;
-    } */
+    } 
 
 
     bool didTap
