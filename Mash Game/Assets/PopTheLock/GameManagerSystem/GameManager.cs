@@ -29,10 +29,4 @@ public class GameManager : MonoBehaviour
         GameData.resetLevel();
         isFirstTap = true;
     }
- 
-
-    public void stopGame()
-    {
-        GameData.isRunning = false;
-    }
 } 

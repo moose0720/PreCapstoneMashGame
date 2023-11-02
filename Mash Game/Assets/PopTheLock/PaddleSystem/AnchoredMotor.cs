@@ -5,9 +5,11 @@ using UnityEngine;
 public class AnchoredMotor : MonoBehaviour
 {
     public GameData GameData;
-    public int Speed = 5;
+
     public Direction Dir = Direction.Clockwise;
     public GameEvent PaddleReset;
+    public int MaxMotorSpeed = 120;
+    public int MinMotorSpeed = 50;
     Vector3 initialPos;
     Transform anchor;
     
@@ -23,7 +25,7 @@ public class AnchoredMotor : MonoBehaviour
         if (GameData.isRunning)
         {
             transform.RotateAround(anchor.position, Vector3.forward,
-                                                      Speed * Time.deltaTime
+                                                     GameData.CurrentMotorSpeed * Time.deltaTime
                                                              * -(int) Dir);
         }
 
@@ -41,8 +43,8 @@ public class AnchoredMotor : MonoBehaviour
         get
         {
             return (Input.GetKeyUp(KeyCode.Space));
-    }
         } 
+    }
 
     void ChangeDirection()
     {
@@ -62,10 +64,9 @@ public class AnchoredMotor : MonoBehaviour
         
         transform.localPosition = new Vector3(0, initialPos.y, 0);
         transform.localRotation = Quaternion.identity;
-        //GameData.isRunning = false;
+        GameData.isRunning = false;
         PaddleReset.Raise();
-    } 
-
+    }
 }
 
 public enum Direction

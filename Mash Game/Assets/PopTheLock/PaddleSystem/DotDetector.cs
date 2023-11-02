@@ -44,23 +44,17 @@ public class DotDetector : MonoBehaviour
                     Destroy(currentDot);
                     GameData.DotsRemaining--;
 
-                /* if (GameData.DotsRemaining <= 0)
-                 {
-                     GameData.DotsRemaining = 0;
-                     GameData.CurrentLevel++;
-                     levelCleared.Raise();
-                 }*/
-                if (GameData.DotsRemaining <= 0)
-                {
-                    GameData.DotsRemaining = 0;
-                    GameData.CurrentLevel++;
-                    levelCleared.Raise();
+                    if (GameData.DotsRemaining <= 0)
+                    {
+                        GameData.DotsRemaining = 0;
+                        GameData.CurrentLevel++;
+                        levelCleared.Raise();
+                    }
+                    else 
+                    {
+                        DotScored.Raise();
+                    }
                 }
-                else 
-                {
-                    DotScored.Raise();
-                }
-            }
                 else
                 {
                    DotMissed.Raise();
