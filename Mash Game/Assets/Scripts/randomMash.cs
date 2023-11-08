@@ -9,7 +9,8 @@ public class randomMash : MonoBehaviour
     public KeyCode Win;
     // It will start a nothing but then it will pick a letter from Z, Q, J, X
     public string currentLetter = "";
-    public string[] letter = new string[] { "Z", "Q", "J", "X" };
+    public string[] letter = new string[] { "Z", "Q", "J", "X", "W", "E", "R", "T", "Y", "U", "I", "O", "P",
+                                             "A", "S", "D", "F", "G", "H", "K", "L", "C", "V", "B", "N", "M"};
 
     public void randomLetter()
     {
@@ -50,8 +51,73 @@ public class randomMash : MonoBehaviour
                 break;
            case "X":
                 Win = KeyCode.X;
-                break; 
-
+                break;
+            case "W":
+                Win = KeyCode.W;
+                break;
+            case "E":
+                Win = KeyCode.E;
+                break;
+            case "R":
+                Win = KeyCode.R;
+                break;
+            case "T":
+                Win = KeyCode.T;
+                break;
+            case "Y":
+                Win = KeyCode.Y;
+                break;
+            case "U":
+                Win = KeyCode.U;
+                break;
+            case "I":
+                Win = KeyCode.I;
+                break;
+            case "O":
+                Win = KeyCode.O;
+                break;
+            case "P":
+                Win = KeyCode.P;
+                break;
+            case "A":
+                Win = KeyCode.A;
+                break;
+            case "S":
+                Win = KeyCode.S;
+                break;
+            case "D":
+                Win = KeyCode.D;
+                break;
+            case "F":
+                Win = KeyCode.F;
+                break;
+            case "G":
+                Win = KeyCode.G;
+                break;
+            case "H":
+                Win = KeyCode.H;
+                break;
+            case "K":
+                Win = KeyCode.K;
+                break;
+            case "L":
+                Win = KeyCode.L;
+                break;
+            case "C":
+                Win = KeyCode.C;
+                break;
+            case "V":
+                Win = KeyCode.V;
+                break;
+            case "B":
+                Win = KeyCode.B;
+                break;
+            case "N":
+                Win = KeyCode.N;
+                break;
+            case "M":
+                Win = KeyCode.M;
+                break;
         }
 
         
