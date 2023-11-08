@@ -14,7 +14,6 @@ namespace Assets.Scripts
         public TMP_Text mashText;
         public randomMash mash; 
         public UnityEvent onScoreGame;
-        public UnityEvent onScoreTake;
         private bool hasPrestAddKey;
         KeyCode addKey = KeyCode.L;
         public GameObject myCheat;
@@ -40,18 +39,8 @@ namespace Assets.Scripts
 
             if (Input.GetKeyDown(addKey))
             {
-            if(mash.Win == KeyCode.X)
-                {
-                    minusMashScore(); 
-                    onScoreTake?.Invoke();
-                    
-                }
-                else
-                {
                 addMashScore();
                 onScoreGame?.Invoke();
-
-                }
 
                 hasPrestAddKey = false;
             }
@@ -64,16 +53,6 @@ namespace Assets.Scripts
         {
             mashScore++;
 
-            //mashText.text = mashScore.ToString();
         }
-
-        public void minusMashScore()
-        {
-            mashScore--;
-            
-        }
-
-    }
-
-    
+    }  
 }
