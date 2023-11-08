@@ -744,6 +744,28 @@ MonoBehaviour:
   - Q
   - J
   - X
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - K
+  - L
+  - C
+  - V
+  - B
+  - N
+  - M
 --- !u!1 &1728379628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,9 +1443,6 @@ MonoBehaviour:
   mashText: {fileID: 2138133767}
   mash: {fileID: 1085746513}
   onScoreGame:
-    m_PersistentCalls:
-      m_Calls: []
-  onScoreTake:
     m_PersistentCalls:
       m_Calls: []
   myCheat: {fileID: 0}
