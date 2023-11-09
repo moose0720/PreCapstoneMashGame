@@ -14,6 +14,7 @@ namespace Assets.Scripts
         public TMP_Text mashText;
         public randomMash mash; 
         public UnityEvent onScoreGame;
+        public AudioSource sound;
         private bool hasPrestAddKey;
         KeyCode addKey = KeyCode.L;
         public GameObject myCheat;
@@ -51,6 +52,7 @@ namespace Assets.Scripts
 
         public void addMashScore()
         {
+            sound.Play();
             mashScore++;
 
         }
