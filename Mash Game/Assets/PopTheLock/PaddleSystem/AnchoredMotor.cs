@@ -5,14 +5,11 @@ using UnityEngine;
 public class AnchoredMotor : MonoBehaviour
 {
     public GameData GameData;
-
-    public Direction Dir = Direction.Clockwise;
-    public GameEvent PaddleReset;
-    public int MaxMotorSpeed = 120;
-    public int MinMotorSpeed = 50;
+    public Dir Dir = Dir.Clockwise;
+    public GameEvent OnPaddleReset;
     Vector3 initialPos;
+
     Transform anchor;
-    
 
     void Start()
     {
@@ -24,17 +21,12 @@ public class AnchoredMotor : MonoBehaviour
     {
         if (GameData.isRunning)
         {
-            transform.RotateAround(anchor.position, Vector3.forward,
-                                                     GameData.CurrentMotorSpeed * Time.deltaTime
-                                                             * -(int) Dir);
+            transform.RotateAround(anchor.position, Vector3.forward, GameData.CurrentMotorSpeed * Time.deltaTime * -(int)Dir);
         }
 
         if (didTap && GameData.isRunning)
         {
-            if(!GameData.isRunning)
-            {
-                ChangeDirection();
-            }
+            ChangeDirection();
         }
     }
 
@@ -50,26 +42,25 @@ public class AnchoredMotor : MonoBehaviour
     {
         switch (Dir)
         {
-            case Direction.Clockwise:
-                Dir = Direction.AntiClockwise;
+            case Dir.Clockwise:
+                Dir = Dir.AntiClockwise;
                 break;
-            case Direction.AntiClockwise:
-                Dir = Direction.Clockwise;
+            case Dir.AntiClockwise:
+                Dir = Dir.Clockwise;
                 break;
         }
     }
 
     public void ResetPosition()
     {
-        
         transform.localPosition = new Vector3(0, initialPos.y, 0);
         transform.localRotation = Quaternion.identity;
-        GameData.isRunning = false;
-        PaddleReset.Raise();
+
+        OnPaddleReset.Raise();
     }
 }
 
-public enum Direction
+public enum Dir
 {
     Clockwise = 1,
     AntiClockwise = -1

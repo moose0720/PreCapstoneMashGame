@@ -5,28 +5,27 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameData GameData;
-    public GameEvent levelCleared;
     bool isFirstTap = true;
 
     void Start()
     {
-        GameData.resetLevel();
+        GameData.ResetLevel();
     }
 
     void Update()
     {
-        
-        if (Input.GetKeyUp(KeyCode.Space) && !GameData.isRunning && isFirstTap)
+        if (Input.GetMouseButtonDown(0) && !GameData.isRunning && isFirstTap)
         {
             GameData.isRunning = true;
             isFirstTap = false;
         }
     }
 
-    public void loadLevel()
+    public void LoadLevel()
     {
-
-        GameData.resetLevel();
+        GameData.ResetLevel();
         isFirstTap = true;
     }
-} 
+
+
+}

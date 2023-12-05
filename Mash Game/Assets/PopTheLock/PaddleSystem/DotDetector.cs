@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DotDetector : MonoBehaviour
 {
+    
     GameObject currentDot;
-    public GameData GameData;
     GameObject lastEnteredDot;
+    public GameData GameData;
     public float LoseThreshold = .5f;
     public GameEvent DotMissed;
     public GameEvent DotScored;
-    public GameEvent levelCleared;
+    public GameEvent WinEvent;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,7 +22,7 @@ public class DotDetector : MonoBehaviour
     {
         lastEnteredDot = currentDot;
         currentDot = null;
-        //Debug.Log("Last dot set");
+        Debug.Log("Last dot set");
     }
 
     void Update()
@@ -38,9 +39,12 @@ public class DotDetector : MonoBehaviour
 
             if (didTap)
             {
-              
                 if (currentDot != null)
                 {
+                    /*if (currentDot.GetComponent<Star>())
+                    {
+                        GameData.Stars++;
+                    }*/
                     Destroy(currentDot);
                     GameData.DotsRemaining--;
 
@@ -48,19 +52,18 @@ public class DotDetector : MonoBehaviour
                     {
                         GameData.DotsRemaining = 0;
                         GameData.CurrentLevel++;
-                        levelCleared.Raise();
+                        WinEvent.Raise();
                     }
-                    else 
+                    else
                     {
                         DotScored.Raise();
                     }
                 }
                 else
                 {
-                   DotMissed.Raise();
+                    DotMissed.Raise();
                 }
-                
-            }   
+            }
         }
 
 
@@ -68,16 +71,16 @@ public class DotDetector : MonoBehaviour
 
     float GetDistanceFromLastDot()
     {
-        //Debug.Log((transform.position - lastEnteredDot.transform.position).magnitude);
+        Debug.Log((transform.position - lastEnteredDot.transform.position).magnitude);
         return (transform.position - lastEnteredDot.transform.position).magnitude;
-    } 
+    }
 
 
     bool didTap
-    {
-        get
         {
-            return (Input.GetKeyUp(KeyCode.Space));
+            get
+            {
+                return (Input.GetKeyUp(KeyCode.Space));
+            }
         }
-    }
-} 
+}

@@ -5,8 +5,8 @@ public class GameData : ScriptableObject
 {
 
     public int CurrentLevel;
-    //public int maxUnlockedLevel;
     public int DotsRemaining;
+    public int Stars;
     public bool isRunning = false;
     public int MinSpawnAngle = 30;
     public int MaxSpawnAngle = 90;
@@ -15,7 +15,7 @@ public class GameData : ScriptableObject
     public int MinMotorSpeed = 50;
     public int MaxMotorSpeed = 120;
 
-    public void resetLevel()
+    public void ResetLevel()
     {
         isRunning = false;
         DotsRemaining = CurrentLevel;
@@ -34,10 +34,10 @@ public class GameData : ScriptableObject
         {
             CurrentMotorSpeed = Mathf.Min(CurrentMotorSpeed + value, MaxMotorSpeed);
         }
-        /*else
+        else
         {
             Debug.LogError("Increase speed value must be greater than 0");
-        }*/
+        }
 
     }
 
@@ -47,10 +47,10 @@ public class GameData : ScriptableObject
         {
             CurrentMotorSpeed = Mathf.Max(CurrentMotorSpeed - value, MinMotorSpeed);
         }
-        /*else
+        else
         {
             Debug.LogError("Reduce speed value must be greater than 0");
-        }*/
+        }
     }
 
     public void StopGame()
