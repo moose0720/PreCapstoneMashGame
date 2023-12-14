@@ -54,7 +54,8 @@ namespace Assets.Scripts
         {
             sound.Play();
             mashScore++;
-
+           // PlayerPrefs.SetInt("Mash Score", mashScore);
+            //int myScore = PlayerPrefs.GetInt("Mash Score");
         }
     }  
 }
