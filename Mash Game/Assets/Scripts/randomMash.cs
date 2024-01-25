@@ -7,10 +7,14 @@ public class randomMash : MonoBehaviour
 {
     public TMP_Text largeText;
     public KeyCode Win;
+    public KeyCode Tw;
     // It will start a nothing but then it will pick a letter from Z, Q, J, X
     public string currentLetter = "";
     public string[] letter = new string[] { "Z", "Q", "J", "X", "W", "E", "R", "T", "Y", "U", "I", "O", "P",
                                              "A", "S", "D", "F", "G", "H", "K", "L", "C", "V", "B", "N", "M", /*"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"*/};
+    public string currentWord = "";
+    public string[] word = new string[] { "the", "tree", "bed" };
+
 
     public void randomLetter()
     {
@@ -21,6 +25,11 @@ public class randomMash : MonoBehaviour
         Debug.Log("RANDOM LETTER: " + currentLetter);
     }
 
+    public void randomWord()
+    {
+        currentWord = word[randomLetter.Range(0, word.Length)];
+        largerText.text = currentWord;
+    }
     // Update is called once per frame
 
     void Start()
@@ -35,6 +44,7 @@ public class randomMash : MonoBehaviour
         //string[] letter = new string[] { "Z", "Q", "J", "X"};
         //string randomletter = letter[Random.Range(0, letter.Length)];
         randomLetter();
+        randomWord();
         
        
         switch (currentLetter)
@@ -121,9 +131,21 @@ public class randomMash : MonoBehaviour
 
         }
 
-        
+        switch ( currentWord )
+        {
+            case "The":
+                Tw = KeyCode.The;
+                break;
+            case "tree":
+                Tw = KeyCode.tree;
+                break;
+            case "bed":
+                Tw = KeyCode.bed;
+                break;
+        }
         // The currentLetter is will start as nothing befor it to be pick of a random letter
         currentLetter = "";
+        currentWord = "";
         
     }
 
