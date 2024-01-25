@@ -1,18 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class threeLetter : MonoBehaviour
+/*public class threeLetter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public KeyCode Tw;
 
+    public string currentWord = "";
+    public string[] word = new string[] { "the", "tree", "bed" };
     // Update is called once per frame
-    void Update()
+
+
+    public void randomWord()
     {
-        
+        currentWord = word[randomLetter.Range(0, word.Length)];
+        largerText.text = currentWord;
     }
-}
+    public void pickRandomMashWord()
+    {
+        randomWord();
+
+        switch (currentWord)
+        {
+            case "the":
+                Tw = KeyCode.The;
+                break;
+            case "tree":
+                Tw = KeyCode.tree;
+                break;
+            case "bed":
+                Tw = KeyCode.bed;
+                break;
+        }
+
+        currentWord = "";
+    }
+}*/
