@@ -12,12 +12,14 @@ namespace Assets.Scripts
     {
         public int mashScore;
         public TMP_Text mashText;
+        public TMP_Text wordText;
         public randomMash mash;
         public threeLetter three;
         public UnityEvent onScoreGame;
         public AudioSource sound;
         private bool hasPrestAddKey;
         KeyCode addKey = KeyCode.L;
+        KeyCode addWord = KeyCode.T;
         public GameObject myCheat;
         // Start is called before the first frame update
 
@@ -33,9 +35,14 @@ namespace Assets.Scripts
             {
                 hasPrestAddKey = true;
                 mash.pickRandomMashLetter();
-                three.pickRandomMashWord();
                 addKey = mash.Win;
-                addKey = three.Tw;
+            }
+
+            if(!hasPrestAddKey)
+            {
+                hasPrestAddKey = true;
+                three.pickRandomMashWord();
+                addWord = three.Tw;
             }
             
             mashText.text = $"Mash: {mashScore}";
@@ -49,7 +56,13 @@ namespace Assets.Scripts
                 hasPrestAddKey = false;
             }
 
-            
+            if (Input.GetKeyDown(addWord))
+            {
+                addMashScore();
+                onScoreGame?.Invoke();
+
+                hasPrestAddKey = false;
+            }
 
         }
 

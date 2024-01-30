@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using TMPro;
+using TMPro;
 
 public class threeLetter : MonoBehaviour
 {
-    //public TMP_Text largeText;
+    public TMP_Text largeWord;
     public KeyCode Tw;
 
     public string currentWord = "";
@@ -14,13 +14,13 @@ public class threeLetter : MonoBehaviour
     public void randomWord()
     {
         currentWord = word[Random.Range(0, word.Length)];
-        //largerText.text = currentWord;
+        largerWord.text = currentWord;
     }
     public void pickRandomMashWord()
     {
         randomWord();
 
-        /*switch (currentWord)
+        switch (currentWord)
         {
             case "the":
                 Tw = KeyCode.the;
@@ -31,7 +31,7 @@ public class threeLetter : MonoBehaviour
             case "bed":
                 Tw = KeyCode.bed;
                 break;
-        }*/
+        }
 
         currentWord = "";
     }
