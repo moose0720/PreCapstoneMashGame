@@ -13,7 +13,7 @@ namespace Assets.Scripts
         public int mashScore;
         public TMP_Text mashText;
         public randomMash mash;
-        public threeLetter three;
+        //public threeLetter three;
         public UnityEvent onScoreGame;
         public AudioSource sound;
         private bool hasPrestAddKey;
@@ -33,9 +33,9 @@ namespace Assets.Scripts
             {
                 hasPrestAddKey = true;
                 mash.pickRandomMashLetter();
-                three.pickRandomMashWord();
+                //three.pickRandomMashWord();
                 addKey = mash.Win;
-                addKey = three.Tw;
+                //addKey = three.Tw;
             }
             
             mashText.text = $"Mash: {mashScore}";
