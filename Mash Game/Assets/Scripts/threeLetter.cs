@@ -1,30 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+//using TMPro;
 
-/*public class threeLetter : MonoBehaviour
+public class threeLetter : MonoBehaviour
 {
+    //public TMP_Text largeText;
     public KeyCode Tw;
 
     public string currentWord = "";
     public string[] word = new string[] { "the", "tree", "bed" };
-    // Update is called once per frame
-
 
     public void randomWord()
     {
-        currentWord = word[randomLetter.Range(0, word.Length)];
-        largerText.text = currentWord;
+        currentWord = word[Random.Range(0, word.Length)];
+        //largerText.text = currentWord;
     }
     public void pickRandomMashWord()
     {
         randomWord();
 
-        switch (currentWord)
+        /*switch (currentWord)
         {
             case "the":
-                Tw = KeyCode.The;
+                Tw = KeyCode.the;
                 break;
             case "tree":
                 Tw = KeyCode.tree;
@@ -32,8 +31,8 @@ using TMPro;
             case "bed":
                 Tw = KeyCode.bed;
                 break;
-        }
+        }*/
 
         currentWord = "";
     }
-}*/
+}
