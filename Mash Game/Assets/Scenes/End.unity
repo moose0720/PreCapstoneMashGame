@@ -704,7 +704,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3351704254031502672, guid: a325128b1edad6e4c8775f47cf289c4c, type: 3}
       propertyPath: m_fontSize
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3351704254031502672, guid: a325128b1edad6e4c8775f47cf289c4c, type: 3}
       propertyPath: m_margin.x
@@ -720,7 +720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3351704254031502672, guid: a325128b1edad6e4c8775f47cf289c4c, type: 3}
       propertyPath: m_fontSizeBase
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3351704254031502673, guid: a325128b1edad6e4c8775f47cf289c4c, type: 3}
       propertyPath: m_Pivot.x
