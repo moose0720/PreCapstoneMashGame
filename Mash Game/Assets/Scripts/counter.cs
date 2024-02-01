@@ -12,8 +12,10 @@ namespace Assets.Scripts
     {
         public int mashScore;
         public int highMashScore;
+        public int yourMash;
         public TMP_Text mashText;
         public TMP_Text highMashScoreText;
+        public TMP_Text yourMashScore;
         //public TMP_Text wordText;
         public randomMash mash;
         //public threeLetter three;
@@ -39,16 +41,16 @@ namespace Assets.Scripts
                 mash.pickRandomMashLetter();
                 addKey = mash.Win;
             }
-
-            if(!hasPrestAddKey)
+            /*if(!hasPrestAddKey)
             {
                 hasPrestAddKey = true;
                 //three.pickRandomMashWord();
                // addWord = three.Tw;
-            }
+            }*/
             
             mashText.text = $"Mash: {mashScore}";
             highMashScoreText.text = $"High Mash: {highMashScore}";
+            yourMashScore.text = $"Your Mash: {yourMash}";
 
 
             if (Input.GetKeyDown(addKey))
@@ -59,6 +61,7 @@ namespace Assets.Scripts
                 hasPrestAddKey = false;
             }
 
+
             /*if (Input.GetKeyDown(addWord))
             {
                 addMashScore();
@@ -67,9 +70,13 @@ namespace Assets.Scripts
                 hasPrestAddKey = false;
             }*/
 
-            if(mashScore > highMashScore)
+            if (mashScore > highMashScore)
             {
                 PlayerPrefs.SetInt("highMashScore", mashScore);
+            }
+            if(mashScore < highMashScore) 
+            {
+                PlayerPrefs.SetInt("yourMash", mashScore);
             }
         }
 
@@ -79,6 +86,11 @@ namespace Assets.Scripts
             mashScore++;
            // PlayerPrefs.SetInt("Mash Score", mashScore);
             //int myScore = PlayerPrefs.GetInt("Mash Score");
+        }
+
+        public void subMashScore()
+        {
+            mashScore--;
         }
     }  
 }

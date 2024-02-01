@@ -19,6 +19,7 @@ public class randomMash : MonoBehaviour
     {
         // This is the picking the letter from the letter that on screen then to the next once the player mash the latter
         currentLetter = letter[Random.Range(0, letter.Length)];
+        //currentLetter != letter = sub.subMashScore();
         largeText.text = currentLetter;
         //This is showing what letter is being called regarles if it on screen or not
         Debug.Log("RANDOM LETTER: " + currentLetter);

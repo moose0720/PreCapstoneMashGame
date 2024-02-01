@@ -1396,6 +1396,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1085746513}
     - target: {fileID: 6874856948473123119, guid: e1cf3af84a7e9df4681aadc11f834d17, type: 3}
+      propertyPath: yourMashScore
+      value: 
+      objectReference: {fileID: 3318295408596627764, guid: 24dbdf679be929b4499ec92c25cf824b, type: 3}
+    - target: {fileID: 6874856948473123119, guid: e1cf3af84a7e9df4681aadc11f834d17, type: 3}
       propertyPath: highMashScoreText
       value: 
       objectReference: {fileID: 3351704254031502672, guid: a325128b1edad6e4c8775f47cf289c4c, type: 3}
