@@ -11,21 +11,23 @@ namespace Assets.Scripts
     public class counter : MonoBehaviour
     {
         public int mashScore;
+        public int highMashScore;
         public TMP_Text mashText;
-        public TMP_Text wordText;
+        public TMP_Text highMashScoreText;
+        //public TMP_Text wordText;
         public randomMash mash;
-        public threeLetter three;
+        //public threeLetter three;
         public UnityEvent onScoreGame;
         public AudioSource sound;
         private bool hasPrestAddKey;
         KeyCode addKey = KeyCode.L;
-        KeyCode addWord = KeyCode.T;
+        //KeyCode addWord = KeyCode.T;
         public GameObject myCheat;
         // Start is called before the first frame update
 
         void Start()
         {
-
+            highMashScore = PlayerPrefs.GetInt("highMashScore");
         }
 
         // Update is called once per frame
@@ -41,11 +43,12 @@ namespace Assets.Scripts
             if(!hasPrestAddKey)
             {
                 hasPrestAddKey = true;
-                three.pickRandomMashWord();
-                addWord = three.Tw;
+                //three.pickRandomMashWord();
+               // addWord = three.Tw;
             }
             
             mashText.text = $"Mash: {mashScore}";
+            highMashScoreText.text = $"High Mash: {highMashScore}";
 
 
             if (Input.GetKeyDown(addKey))
@@ -56,14 +59,18 @@ namespace Assets.Scripts
                 hasPrestAddKey = false;
             }
 
-            if (Input.GetKeyDown(addWord))
+            /*if (Input.GetKeyDown(addWord))
             {
                 addMashScore();
                 onScoreGame?.Invoke();
 
                 hasPrestAddKey = false;
-            }
+            }*/
 
+            if(mashScore > highMashScore)
+            {
+                PlayerPrefs.SetInt("highMashScore", mashScore);
+            }
         }
 
         public void addMashScore()
