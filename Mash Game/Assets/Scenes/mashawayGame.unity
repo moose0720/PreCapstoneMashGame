@@ -427,7 +427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'More Points
+  m_text: 'Lose Points
 
 '
   m_isRightToLeft: 0
@@ -962,7 +962,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2138133768}
         m_TargetAssemblyTypeName: Assets.Scripts.counter, Assembly-CSharp
-        m_MethodName: addMashScore
+        m_MethodName: subMashScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1565,7 +1565,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2138133768}
         m_TargetAssemblyTypeName: Assets.Scripts.counter, Assembly-CSharp
-        m_MethodName: addMashScore
+        m_MethodName: subMashScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
