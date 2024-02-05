@@ -1,0 +1,4 @@
+repository "Mash Game@Lextrod@cloud"
+  path "/"
+    br "/main"
+    co "/main"
