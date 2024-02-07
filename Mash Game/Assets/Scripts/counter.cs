@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Assets.Scripts
@@ -35,19 +33,13 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if(!hasPrestAddKey)
+            if (!hasPrestAddKey)
             {
                 hasPrestAddKey = true;
                 mash.pickRandomMashLetter();
                 addKey = mash.Win;
             }
-            /*if(!hasPrestAddKey)
-            {
-                hasPrestAddKey = true;
-                //three.pickRandomMashWord();
-               // addWord = three.Tw;
-            }*/
-            
+
             mashText.text = $"Mash: {mashScore}";
             highMashScoreText.text = $"High Mash: {highMashScore}";
             yourMashScore.text = $"Your Mash: {yourMash}";
@@ -61,20 +53,11 @@ namespace Assets.Scripts
                 hasPrestAddKey = false;
             }
 
-
-            /*if (Input.GetKeyDown(addWord))
-            {
-                addMashScore();
-                onScoreGame?.Invoke();
-
-                hasPrestAddKey = false;
-            }*/
-
             if (mashScore > highMashScore)
             {
                 PlayerPrefs.SetInt("highMashScore", mashScore);
             }
-            if(mashScore < highMashScore) 
+            if (mashScore < highMashScore)
             {
                 PlayerPrefs.SetInt("yourMash", mashScore);
             }
@@ -84,7 +67,7 @@ namespace Assets.Scripts
         {
             sound.Play();
             mashScore++;
-           // PlayerPrefs.SetInt("Mash Score", mashScore);
+            // PlayerPrefs.SetInt("Mash Score", mashScore);
             //int myScore = PlayerPrefs.GetInt("Mash Score");
         }
 
@@ -92,5 +75,5 @@ namespace Assets.Scripts
         {
             mashScore--;
         }
-    }  
+    }
 }

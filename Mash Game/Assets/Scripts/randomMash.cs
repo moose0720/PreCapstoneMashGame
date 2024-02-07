@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class randomMash : MonoBehaviour
 {
@@ -31,29 +29,29 @@ public class randomMash : MonoBehaviour
     {
         //pickRandomMashLetter();
     }
-        
-    
+
+
     // This will randomly pick the letter Z,Q,J. Update it to slow down for the player can see the letter.
     public void pickRandomMashLetter()
     {
         //string[] letter = new string[] { "Z", "Q", "J", "X"};
         //string randomletter = letter[Random.Range(0, letter.Length)];
         randomLetter();
-        
-       
+
+
         switch (currentLetter)
         {
             case "Z":
                 Win = KeyCode.Z;
                 break;
-                
+
             case "Q":
-                Win= KeyCode.Q;
+                Win = KeyCode.Q;
                 break;
             case "J":
                 Win = KeyCode.J;
                 break;
-           case "X":
+            case "X":
                 Win = KeyCode.X;
                 break;
             case "W":
@@ -124,9 +122,9 @@ public class randomMash : MonoBehaviour
                 break;
 
         }
-        
+
         // The currentLetter is will start as nothing befor it to be pick of a random letter
         currentLetter = "";
-        
+
     }
 }

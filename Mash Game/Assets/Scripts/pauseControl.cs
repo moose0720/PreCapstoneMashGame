@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class pauseControl : MonoBehaviour
@@ -13,11 +11,11 @@ public class pauseControl : MonoBehaviour
     }
 
     // Update is called once per frame
-     void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if(isPause)
+            if (isPause)
             {
                 resumGame();
             }
