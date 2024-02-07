@@ -1055,9 +1055,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1085746513 stripped
+--- !u!114 &1085746512 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5592970357784654651, guid: 019c705e142fe0243bd45140315e01b7, type: 3}
+  m_CorrespondingSourceObject: {fileID: -5410329336044066389, guid: 019c705e142fe0243bd45140315e01b7, type: 3}
   m_PrefabInstance: {fileID: 5592970356722507370}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1636,6 +1636,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1728379632}
     m_Modifications:
+    - target: {fileID: -5410329336044066389, guid: 019c705e142fe0243bd45140315e01b7, type: 3}
+      propertyPath: largeText
+      value: 
+      objectReference: {fileID: 1085746511}
     - target: {fileID: 5592970357784654628, guid: 019c705e142fe0243bd45140315e01b7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1824,7 +1828,7 @@ PrefabInstance:
     - target: {fileID: 6874856948473123119, guid: e1cf3af84a7e9df4681aadc11f834d17, type: 3}
       propertyPath: mash
       value: 
-      objectReference: {fileID: 1085746513}
+      objectReference: {fileID: 1085746512}
     - target: {fileID: 6874856948473123119, guid: e1cf3af84a7e9df4681aadc11f834d17, type: 3}
       propertyPath: yourMashScore
       value: 
