@@ -123,26 +123,20 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &301313936 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5009584097543706788, guid: 866e05d6bdcbd8547b984625f1ae7b31, type: 3}
-  m_PrefabInstance: {fileID: 5009584097291171636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &301313937 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5009584097543706789, guid: 866e05d6bdcbd8547b984625f1ae7b31, type: 3}
   m_PrefabInstance: {fileID: 5009584097291171636}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &301313942
+--- !u!114 &301313938 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5009584097543706791, guid: 866e05d6bdcbd8547b984625f1ae7b31, type: 3}
+  m_PrefabInstance: {fileID: 5009584097291171636}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301313936}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0347b49cdd5085e4d993853576b6a9c1, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1025189943
@@ -155,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1025189944}
   - component: {fileID: 1025189948}
-  - component: {fileID: 1025189947}
+  - component: {fileID: 1025189949}
   - component: {fileID: 1025189946}
   - component: {fileID: 1025189945}
   m_Layer: 5
@@ -370,30 +364,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1025189947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025189943}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60570c63ec495fa49852ac9bc1679f55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mashScore: 0
-  highMashScore: 0
-  yourMash: 0
-  mashText: {fileID: 1025189946}
-  highMashScoreText: {fileID: 3351704254031502672, guid: a325128b1edad6e4c8775f47cf289c4c, type: 3}
-  yourMashScore: {fileID: 3318295408596627764, guid: 24dbdf679be929b4499ec92c25cf824b, type: 3}
-  mash: {fileID: 5592970357784654651, guid: 019c705e142fe0243bd45140315e01b7, type: 3}
-  onScoreGame:
-    m_PersistentCalls:
-      m_Calls: []
-  sound: {fileID: 1025189945}
-  myCheat: {fileID: 0}
 --- !u!222 &1025189948
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -402,6 +372,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025189943}
   m_CullTransparentMesh: 1
+--- !u!114 &1025189949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025189943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172de4c79a9526245a840f4edc29f31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordDisplay: {fileID: 301313938}
+  scoreDisplay: {fileID: 1025189946}
 --- !u!1 &1261955566
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,6 +811,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1693560344}
     m_Modifications:
+    - target: {fileID: 4044207022113792043, guid: 866e05d6bdcbd8547b984625f1ae7b31, type: 3}
+      propertyPath: wordDisplay
+      value: 
+      objectReference: {fileID: 301313938}
+    - target: {fileID: 4044207022113792043, guid: 866e05d6bdcbd8547b984625f1ae7b31, type: 3}
+      propertyPath: scoreDisplay
+      value: 
+      objectReference: {fileID: 1025189946}
     - target: {fileID: 5009584097543706788, guid: 866e05d6bdcbd8547b984625f1ae7b31, type: 3}
       propertyPath: m_Name
       value: WordMashText (TMP)
@@ -915,5 +907,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1475682204670816914, guid: 866e05d6bdcbd8547b984625f1ae7b31, type: 3}
+    - {fileID: 5009584097543706785, guid: 866e05d6bdcbd8547b984625f1ae7b31, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 866e05d6bdcbd8547b984625f1ae7b31, type: 3}

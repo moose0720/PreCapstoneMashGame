@@ -1,76 +1,56 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UI;
 using TMPro;
 
 public class TypingWords : MonoBehaviour
 {
-    public List<Word> words;
-    public TMP_Text display;
+    public TMP_Text wordDisplay;
+    public TMP_Text scoreDisplay;
+
+    private string currentWord;
+    private int score = 0;
+
+    private string[] wordList = { "cat", "dog", "bat", "hat", "sun", "pen" };
+
+    private void Start()
+    {
+        UpdateWord();
+    }
+
     private void Update()
     {
-        string input = Input.inputString;
-        if (input.Equals(""))//If we are not typing
-            return; //Stops this function here
-        char c = input[0];
-        string typing = "";
-        for (int i = 0; i < words.Count; i++)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            Word w = words[i];
-            if (w.continueText(c))
-            {
-                string typed = w.getTyped();
-                typing += typing;
-                if (typed.Equals(w.text))//If what we typed is the word's text
-                {
-                    Debug.Log("TYPED :" + w.text);
-                    break;
-                }
-            }
+            CheckInput();
+            UpdateWord();
         }
-        display.text = typing;
     }
-}
 
-
-[System.Serializable]
-public class Word
-{
-    public string text;
-    public UnityEvent onTyped;
-    string hasTyped = "";
-    int curChar = 0;
-
-    public Word(string t)
+    void UpdateWord()
     {
-        text = t;
-        hasTyped = "";
-        curChar = 0;
+        currentWord = GetRandomWord();
+        wordDisplay.text = currentWord;
     }
-    public bool continueText(char c)
+
+    void CheckInput()
     {
-        if (c.Equals(text[curChar]))
+        string userInput = wordDisplay.text.ToLower();
+
+        if (userInput.Length == 3 && userInput == currentWord)
         {
-            curChar++;
-            hasTyped = text.Substring(0, curChar);
-
-            if (curChar >= text.Length)// If we typed the whole word
-            {
-                onTyped.Invoke();
-                curChar = 0;
-            }
-            return true;
+            score++;
+            scoreDisplay.text = "Score: " + score.ToString();
+            Debug.Log("Correct! You gained a point.");
         }
         else
         {
-            curChar = 0;
-            hasTyped = "";
-            return false;
+            Debug.Log("Incorrect! Try again.");
         }
     }
 
-    public string getTyped()
+    string GetRandomWord()
     {
-        return hasTyped;
+        return wordList[Random.Range(0, wordList.Length)];
     }
 }
