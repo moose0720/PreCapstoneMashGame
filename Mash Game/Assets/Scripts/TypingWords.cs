@@ -26,12 +26,13 @@ public class TypingWords : MonoBehaviour
         {
               hasTypedWord = true;
               CheckInput();
+
         }
         
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            hasTypedWord = false;
               UpdateWord();
+            hasTypedWord = false;
         }
     }
 
