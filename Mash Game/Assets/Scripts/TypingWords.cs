@@ -22,16 +22,16 @@ public class TypingWords : MonoBehaviour
 
      void Update()
     {
-        if(hasTypedWord)
+        if(!hasTypedWord)
         {
-            hasTypedWord = true;
+              hasTypedWord = true;
+              CheckInput();
         }
         
-        if (!Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-              CheckInput();
+            hasTypedWord = false;
               UpdateWord();
-              hasTypedWord = false;
         }
     }
 
@@ -39,7 +39,6 @@ public class TypingWords : MonoBehaviour
     {
         currentWord = GetRandomWord();
         wordDisplay.text = currentWord;
-        hasTypedWord = true;
     }
 
      void CheckInput()
@@ -49,6 +48,7 @@ public class TypingWords : MonoBehaviour
         if (userInput.Length == 3 && userInput == currentWord)
         {
             score++;
+            hasTypedWord = true;
             scoreDisplay.text = "Score: " + score.ToString();
             Debug.Log("Correct! You gained a point.");
         }
