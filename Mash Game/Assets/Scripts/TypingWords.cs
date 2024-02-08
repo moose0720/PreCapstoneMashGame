@@ -3,10 +3,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class TypingWords : MonoBehaviour
 {
     public TMP_Text wordDisplay;
     public TMP_Text scoreDisplay;
+    private bool hasTypedWord;
 
     private string currentWord;
     private int score = 0;
@@ -18,12 +20,18 @@ public class TypingWords : MonoBehaviour
         UpdateWord();
     }
 
-    private void Update()
+     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if(hasTypedWord)
         {
-            CheckInput();
-            UpdateWord();
+            hasTypedWord = true;
+        }
+        
+        if (!Input.GetKeyDown(KeyCode.Return))
+        {
+              CheckInput();
+              UpdateWord();
+              hasTypedWord = false;
         }
     }
 
@@ -31,9 +39,10 @@ public class TypingWords : MonoBehaviour
     {
         currentWord = GetRandomWord();
         wordDisplay.text = currentWord;
+        hasTypedWord = true;
     }
 
-    void CheckInput()
+     void CheckInput()
     {
         string userInput = wordDisplay.text.ToLower();
 

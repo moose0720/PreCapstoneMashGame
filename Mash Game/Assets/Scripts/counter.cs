@@ -14,14 +14,12 @@ namespace Assets.Scripts
         public TMP_Text mashText;
         public TMP_Text highMashScoreText;
         public TMP_Text yourMashScore;
-        //public TMP_Text wordText;
         public randomMash mash;
-        //public threeLetter three;
+       // public TypingWords Rightword;
         public UnityEvent onScoreGame;
         public AudioSource sound;
         private bool hasPrestAddKey;
         KeyCode addKey = KeyCode.L;
-        //KeyCode addWord = KeyCode.T;
         public GameObject myCheat;
         // Start is called before the first frame update
 
@@ -67,6 +65,7 @@ namespace Assets.Scripts
         {
             sound.Play();
             mashScore++;
+            //Rightword.CheckInput();
             // PlayerPrefs.SetInt("Mash Score", mashScore);
             //int myScore = PlayerPrefs.GetInt("Mash Score");
         }
