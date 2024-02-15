@@ -10,10 +10,10 @@ namespace Assets.Scripts
     {
         public int mashScore;
         public int highMashScore;
-        public int yourMash;
+        //public int yourMash;
         public TMP_Text mashText;
         public TMP_Text highMashScoreText;
-        public TMP_Text yourMashScore;
+        //public TMP_Text yourMashScore;
         public randomMash mash;
        // public TypingWords Rightword;
         public UnityEvent onScoreGame;
@@ -34,13 +34,16 @@ namespace Assets.Scripts
             if (!hasPrestAddKey)
             {
                 hasPrestAddKey = true;
-                mash.pickRandomMashLetter();
-                addKey = mash.Win;
+                if (mash != null)
+                {
+                    mash.pickRandomMashLetter();
+                    addKey = mash.Win;
+                }
             }
 
             mashText.text = $"Mash: {mashScore}";
             highMashScoreText.text = $"High Mash: {highMashScore}";
-            yourMashScore.text = $"Your Mash: {yourMash}";
+            //yourMashScore.text = $"Your Mash: {yourMash}";
 
 
             if (Input.GetKeyDown(addKey))
@@ -55,24 +58,21 @@ namespace Assets.Scripts
             {
                 PlayerPrefs.SetInt("highMashScore", mashScore);
             }
-            if (mashScore < highMashScore)
+            /*if (mashScore < highMashScore)
             {
                 PlayerPrefs.SetInt("yourMash", mashScore);
-            }
+            }*/
         }
 
         public void addMashScore()
         {
-            sound.Play();
+            if (sound != null)
+                sound.Play();
             mashScore++;
             //Rightword.CheckInput();
             // PlayerPrefs.SetInt("Mash Score", mashScore);
             //int myScore = PlayerPrefs.GetInt("Mash Score");
         }
 
-        public void subMashScore()
-        {
-            mashScore--;
-        }
     }
 }

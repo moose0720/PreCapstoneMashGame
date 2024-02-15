@@ -189,7 +189,8 @@ MonoBehaviour:
   highMashScore: 0
   mashText: {fileID: 6874856948473123104, guid: e1cf3af84a7e9df4681aadc11f834d17, type: 3}
   highMashScoreText: {fileID: 3351704254031502672}
-  mash: {fileID: 0}
+  yourMashScore: {fileID: 0}
+  mash: {fileID: 5592970357784654651, guid: 019c705e142fe0243bd45140315e01b7, type: 3}
   onScoreGame:
     m_PersistentCalls:
       m_Calls: []

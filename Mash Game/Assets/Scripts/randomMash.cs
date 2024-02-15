@@ -34,8 +34,7 @@ public class randomMash : MonoBehaviour
     // This will randomly pick the letter Z,Q,J. Update it to slow down for the player can see the letter.
     public void pickRandomMashLetter()
     {
-        //string[] letter = new string[] { "Z", "Q", "J", "X"};
-        //string randomletter = letter[Random.Range(0, letter.Length)];
+
         randomLetter();
 
 
