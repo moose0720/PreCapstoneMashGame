@@ -1,66 +1,51 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using TMPro;
-
 
 public class TypingWords : MonoBehaviour
 {
     public TMP_Text wordDisplay;
-    public TMP_Text scoreDisplay;
-    private bool hasTypedWord;
+    public InputField inputField;
+    public TMP_Text scoreText;
 
-    private string currentWord;
+    private List<string> threeLetterWords = new List<string> { "CAT", "DOG", "SUN", "SKI", "BOX" };
+    private int currentWordIndex = 0;
     private int score = 0;
 
-    private string[] wordList = { "cat", "dog", "bat", "hat", "sun", "pen" };
-
-    private void Start()
+    void Start()
     {
-        UpdateWord();
+        DisplayCurrentWord();
     }
 
-     void Update()
+    void DisplayCurrentWord()
     {
-        if(!hasTypedWord)
-        {
-              hasTypedWord = true;
-              CheckInput();
-
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-              UpdateWord();
-            hasTypedWord = false;
-        }
+        // Display the current word on the screen
+        wordDisplay.text = threeLetterWords[currentWordIndex];
     }
 
-    void UpdateWord()
+    public void OnSubmit()
     {
-        currentWord = GetRandomWord();
-        wordDisplay.text = currentWord;
-    }
-
-     void CheckInput()
-    {
-        string userInput = wordDisplay.text.ToLower();
-
-        if (userInput.Length == 3 && userInput == currentWord)
+        // Check if the entered word is correct
+        if (inputField.text.ToUpper() == threeLetterWords[currentWordIndex])
         {
+            // Add a point to the score
             score++;
-            hasTypedWord = true;
-            scoreDisplay.text = "Score: " + score.ToString();
-            Debug.Log("Correct! You gained a point.");
+            scoreText.text = "Score: " + score;
+
+            // Move to the next word
+            currentWordIndex = (currentWordIndex + 1) % threeLetterWords.Count;
+
+            // Display the new word on the screen
+            DisplayCurrentWord();
         }
         else
         {
-            Debug.Log("Incorrect! Try again.");
+            Debug.Log("Incorrect. Try again!");
+            // Add your logic for what happens when the player enters an incorrect word
         }
-    }
 
-    string GetRandomWord()
-    {
-        return wordList[Random.Range(0, wordList.Length)];
+        // Clear the input field
+        inputField.text = "";
     }
 }
