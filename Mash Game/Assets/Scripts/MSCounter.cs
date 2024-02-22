@@ -6,7 +6,7 @@ namespace Assets.Scripts
 {
     //using UnityEngine.UI;
 
-    public class counter : MonoBehaviour
+    public class MSCounter : MonoBehaviour
     {
         public int mashScore;
         public int highMashScore;
@@ -69,6 +69,7 @@ namespace Assets.Scripts
             if (sound != null)
                 sound.Play();
             mashScore++;
+            
             //Rightword.CheckInput();
             // PlayerPrefs.SetInt("Mash Score", mashScore);
             //int myScore = PlayerPrefs.GetInt("Mash Score");
