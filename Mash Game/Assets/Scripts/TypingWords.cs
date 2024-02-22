@@ -27,17 +27,22 @@ public class TypingWords : MonoBehaviour
     public void OnSubmit()
     {
         // Check if the entered word is correct
-        if (inputField.text.ToUpper() == threeLetterWords[currentWordIndex])
+
+        if (inputField != null)
         {
-            // Add a point to the score
-            score++;
-            scoreText.text = "Score: " + score;
+            if (inputField.text.ToUpper() == threeLetterWords[currentWordIndex])
+            {
+                // Add a point to the score
+                score++;
+                scoreText.text = "Score: " + score;
 
-            // Move to the next word
-            currentWordIndex = (currentWordIndex + 1) % threeLetterWords.Count;
+                // Move to the next word
+                currentWordIndex = (currentWordIndex + 1) % threeLetterWords.Count;
 
-            // Display the new word on the screen
-            DisplayCurrentWord();
+
+                // Display the new word on the screen
+                DisplayCurrentWord();
+            }
         }
         else
         {
