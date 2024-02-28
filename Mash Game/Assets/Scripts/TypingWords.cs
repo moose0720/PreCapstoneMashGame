@@ -1,56 +1,56 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using TMPro;
 
 public class TypingWords : MonoBehaviour
 {
     public TMP_Text wordDisplay;
-    public InputField inputField;
-    public TMP_Text scoreText;
+    public TMP_InputField userInput;
+    public TMP_Text scoreDisplay;
 
-    private List<string> threeLetterWords = new List<string> { "CAT", "DOG", "SUN", "SKI", "BOX" };
+    private string[] words = { "cat", "dog", "sun", "sky", "red", "car" };
     private int currentWordIndex = 0;
     private int score = 0;
 
     void Start()
     {
-        DisplayCurrentWord();
+        DisplayNextWord();
     }
 
-    void DisplayCurrentWord()
+    void Update()
     {
-        // Display the current word on the screen
-        wordDisplay.text = threeLetterWords[currentWordIndex];
-    }
-
-    public void OnSubmit()
-    {
-        // Check if the entered word is correct
-
-        if (inputField != null)
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            if (inputField.text.ToUpper() == threeLetterWords[currentWordIndex])
-            {
-                // Add a point to the score
-                score++;
-                scoreText.text = "Score: " + score;
+            CheckWord();
+        }
+    }
 
-                // Move to the next word
-                currentWordIndex = (currentWordIndex + 1) % threeLetterWords.Count;
-
-
-                // Display the new word on the screen
-                DisplayCurrentWord();
-            }
+    void DisplayNextWord()
+    {
+        if (currentWordIndex < words.Length)
+        {
+            string nextWord = words[currentWordIndex];
+            wordDisplay.text = nextWord;
+            userInput.text = "";
         }
         else
         {
-            Debug.Log("Incorrect. Try again!");
-            // Add your logic for what happens when the player enters an incorrect word
+            Debug.Log("Hi.");
+        }
+    }
+
+    void CheckWord()
+    {
+        string enteredWord = userInput.text.ToLower();
+        string correctWord = words[currentWordIndex].ToLower();
+
+        if (enteredWord == correctWord)
+        {
+            score++;
+            scoreDisplay.text = "Score: " + score.ToString();
         }
 
-        // Clear the input field
-        inputField.text = "";
+        currentWordIndex++;
+        DisplayNextWord();
     }
 }
