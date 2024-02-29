@@ -15,12 +15,9 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if(MScore != null)
-            {
-                MScore.addMashScore(); // Get score from MSCounter
+           int scoreValue = MScore.mashScore; // mashScore returns the current score value
 
-            }
-            //if (MScore >= 20 && currentSkyBoxIndex == 0) // Change to the second skybox when score reaches 20
+            if (scoreValue >= 20 && currentSkyBoxIndex == 0) // Change to the second skybox when score reaches 20
             {
                 currentSkyBoxIndex = 1;
                 RenderSettings.skybox = skyboxes[currentSkyBoxIndex];
