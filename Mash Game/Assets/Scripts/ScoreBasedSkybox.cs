@@ -1,8 +1,8 @@
 using UnityEngine;
-
+namespace Assets.Scripts
 public class ScoreBasedSkybox : MonoBehaviour
 {
-   /* public MSCounter MScore;
+    public MSCounter MScore;
     public Material[] skyboxes;
     private int currentSkyBoxIndex = 0;
     // Start is called before the first frame update
@@ -20,5 +20,5 @@ public class ScoreBasedSkybox : MonoBehaviour
             currentSkyBoxIndex = 1;
             RenderSettings.skybox = skyboxes[currentSkyBoxIndex];
         }
-    }*/
+    }
 }
