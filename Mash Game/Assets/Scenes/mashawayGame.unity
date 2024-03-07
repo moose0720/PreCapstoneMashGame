@@ -698,6 +698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2ba9eaa1aecdc4eb45c3093ad69ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MScore: {fileID: 2138133768}
+  skyboxes:
+  - {fileID: 2100000, guid: 81f714daf7144784b8a2f42f1cd30927, type: 2}
+  - {fileID: 2100000, guid: 806023371a9a8704990dab2df2db8f1d, type: 2}
 --- !u!4 &658355212
 Transform:
   m_ObjectHideFlags: 0
