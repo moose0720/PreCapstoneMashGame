@@ -8,7 +8,10 @@ public class TypingWords : MonoBehaviour
     public TMP_InputField userInput;
     public TMP_Text scoreDisplay;
 
-    private string[] words = { "cat", "dog", "sun", "sky", "red", "car" };
+    private string[] words = { "cat", "dog", "sun", "sky", "red", "car" "run", "box", "pen", "cup", "bat", "sit", "hop"
+                                "nod", "tip", "lip", "bug", "fan", "gem", "joy", "elf", "lab", "nut", "pig", "rag", "van",
+                                 "ink", "log", "map", "nap", "oak", "pan", "ram", "sea", "toy", "yam", "zen", "bib", "egg",
+                                    "kit", "leg", "tag", "wax", "zoo", "gig", "hay", "ice", "orb", "sum", "ant", "pie", "guy"};
     private int currentWordIndex = 0;
     private int score = 0;
 
