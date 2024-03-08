@@ -22,6 +22,12 @@ namespace Assets.Scripts
                 currentSkyBoxIndex = 1;
                 RenderSettings.skybox = skyboxes[currentSkyBoxIndex];
             }
+
+            if(scoreValue >= 40 && currentSkyBoxIndex == 1)
+            {
+                currentSkyBoxIndex = 2;
+                RenderSettings.skybox = skyboxes[currentSkyBoxIndex];
+            }
         }
     }
 }

@@ -702,6 +702,7 @@ MonoBehaviour:
   skyboxes:
   - {fileID: 2100000, guid: 81f714daf7144784b8a2f42f1cd30927, type: 2}
   - {fileID: 2100000, guid: 806023371a9a8704990dab2df2db8f1d, type: 2}
+  - {fileID: 2100000, guid: be3d71c94cf08934d87d8bea681c9275, type: 2}
 --- !u!4 &658355212
 Transform:
   m_ObjectHideFlags: 0
